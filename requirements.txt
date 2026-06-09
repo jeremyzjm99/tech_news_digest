@@ -1,0 +1,6 @@
+anthropic
+feedparser
+python-dateutil
+python-dotenv
+jinja2
+requests

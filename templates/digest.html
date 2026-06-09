@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI & Tech Digest — {{ date }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0c0c0c;
+      --surface:       #161616;
+      --surface-hover: #1e1e1e;
+      --border:        rgba(255,255,255,0.08);
+      --border-hover:  rgba(255,255,255,0.14);
+      --text-1:        #f2f2f2;
+      --text-2:        #b4b4b4;
+      --text-3:        #787878;
+      --cyan:          #06d6f5;
+      --violet:        #a78bfa;
+      --r:             10px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ──────────────────────────────────── */
+    .topbar {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-1);
+    }
+    .topbar-date {
+      font-size: 0.78rem;
+      color: var(--text-3);
+    }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      padding: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.28rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.14s, color 0.14s;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-1);
+    }
+
+    /* ── Overview ─────────────────────────────────── */
+    .overview {
+      max-width: 1080px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+    }
+    .label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 0.6rem;
+    }
+    .overview p {
+      font-size: 0.92rem;
+      color: var(--text-2);
+      line-height: 1.75;
+    }
+
+    /* ── Main grid ────────────────────────────────── */
+    main {
+      max-width: 1080px;
+      margin: 3rem auto 5rem;
+      padding: 0 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .topbar { flex-direction: column; gap: 0.2rem; }
+      main, .overview { padding: 0 1rem; }
+    }
+
+    /* ── Card ─────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      transition: background 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+    }
+    .card:hover {
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 0.08rem 0.45rem;
+    }
+    .source {
+      font-size: 0.72rem;
+      color: var(--text-3);
+    }
+    .score {
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-3);
+    }
+    .score.high { color: var(--cyan); }
+    .score.mid  { color: var(--violet); }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+    .card-title a {
+      color: var(--text-1);
+      text-decoration: none;
+    }
+    .card-title a:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.2);
+    }
+
+    .card-summary {
+      font-size: 0.83rem;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.15rem;
+    }
+    .kw {
+      font-size: 0.67rem;
+      color: var(--text-3);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 0.08rem 0.4rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-3);
+      font-size: 0.73rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-title">AI & Tech Digest</span>
+  <span class="topbar-date">{{ date }}</span>
+</div>
+
+<nav>
+  <a href="digest.html">Digest</a>
+  <a href="analytics.html">Analytics</a>
+</nav>
+
+<div class="overview">
+  <p class="label">Today's Overview</p>
+  <p>{{ overview }}</p>
+</div>
+
+<main>
+  <p class="label" style="margin-bottom:1rem">Top Stories</p>
+  <div class="grid">
+    {% for article in articles %}
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">{{ article.category }}</span>
+        <span class="source">{{ article.source }}</span>
+        <span class="score {% if article.score >= 8 %}high{% elif article.score >= 6 %}mid{% endif %}">
+          {{ article.score }}/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="{{ article.url }}" target="_blank" rel="noopener">{{ article.title }}</a>
+      </p>
+      {% if article.ai_summary %}
+      <p class="card-summary">{{ article.ai_summary }}</p>
+      {% elif article.summary %}
+      <p class="card-summary">{{ article.summary }}</p>
+      {% endif %}
+      {% if article.keywords %}
+      <div class="keywords">
+        {% for kw in article.keywords.split(", ") %}
+        <span class="kw">{{ kw }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+<footer>AI & Tech Digest</footer>
+
+</body>
+</html>

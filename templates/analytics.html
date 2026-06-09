@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — AI & Tech Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0c0c0c;
+      --surface:       #161616;
+      --surface-hover: #1e1e1e;
+      --border:        rgba(255,255,255,0.08);
+      --border-hover:  rgba(255,255,255,0.14);
+      --text-1:        #f2f2f2;
+      --text-2:        #b4b4b4;
+      --text-3:        #787878;
+      --cyan:          #06d6f5;
+      --violet:        #a78bfa;
+      --green:         #34d399;
+      --red:           #f87171;
+      --amber:         #fbbf24;
+      --r:             10px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ──────────────────────────────────── */
+    .topbar {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .topbar-date {
+      font-size: 0.78rem;
+      color: var(--text-3);
+    }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      padding: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.28rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.14s, color 0.14s;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-1);
+    }
+
+    /* ── Layout ───────────────────────────────────── */
+    main {
+      max-width: 1080px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .topbar { flex-direction: column; gap: 0.2rem; }
+      main { padding: 0 1rem; }
+    }
+
+    /* ── Section card ─────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .section-header {
+      padding: 1.1rem 1.5rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .section-sub {
+      font-size: 0.76rem;
+      color: var(--text-3);
+      margin-top: 0.2rem;
+    }
+    .section-body { padding: 1.25rem 1.5rem; }
+
+    /* ── Table ────────────────────────────────────── */
+    table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    th {
+      text-align: left;
+      color: var(--text-3);
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: .04em;
+      padding: 0 0 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-2);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    td a { color: var(--text-1); text-decoration: none; }
+    td a:hover { text-decoration: underline; text-decoration-color: rgba(255,255,255,0.2); }
+    td strong { color: var(--cyan); font-weight: 700; }
+
+    /* score column — first col */
+    .col-score { width: 4rem; }
+    .col-bar   { width: 30%; }
+
+    /* ── Progress bar ─────────────────────────────── */
+    .bar-wrap {
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      height: 4px;
+    }
+    .bar {
+      background: linear-gradient(90deg, #4f46e5, var(--violet));
+      border-radius: 99px;
+      height: 4px;
+    }
+
+    /* ── Status colours ───────────────────────────── */
+    .c-green  { color: var(--green);  font-weight: 600; }
+    .c-red    { color: var(--red);    font-weight: 600; }
+    .c-amber  { color: var(--amber);  font-weight: 600; }
+    .c-dim    { color: var(--text-3); }
+
+    /* ── Keyword cloud ────────────────────────────── */
+    .kw-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .kw {
+      font-size: 0.73rem;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 0.18rem 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-3);
+      font-size: 0.73rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-title">Analytics Dashboard</span>
+  <span class="topbar-date">{{ date }} · AI & Tech Digest</span>
+</div>
+
+<nav>
+  <a href="digest.html">Digest</a>
+  <a href="analytics.html">Analytics</a>
+</nav>
+
+<main>
+
+  <!-- 1. Weekly top articles -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Top Articles This Week</p>
+      <p class="section-sub">Highest-scored stories from the past 7 days</p>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th class="col-score">Score</th>
+          <th>Title</th>
+          <th>Source</th>
+        </tr>
+        {% for a in analytics.top_articles %}
+        <tr>
+          <td><strong>{{ a.score }}/10</strong></td>
+          <td><a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a></td>
+          <td>{{ a.source }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+  <!-- 2. Topic velocity -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Topic Velocity</p>
+      <p class="section-sub">Which topics are rising, falling, or brand new compared to last week</p>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Keyword</th>
+          <th>This Week</th>
+          <th>Last Week</th>
+          <th>Change</th>
+        </tr>
+        {% for row in analytics.topic_velocity %}
+        <tr>
+          <td style="color:var(--text-1)">{{ row.keyword }}</td>
+          <td>{{ row.this_week }}</td>
+          <td>{{ row.last_week }}</td>
+          <td>
+            {% if row.growth is none %}
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            {% elif row.growth > 0 %}
+              <span class="c-green">+{{ row.growth }}%</span>
+            {% elif row.growth < 0 %}
+              <span class="c-red">{{ row.growth }}%</span>
+            {% else %}
+              <span class="c-dim">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. Weekly keywords -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Weekly Keywords</p>
+      <p class="section-sub">Most frequent terms across top articles in the last 7 days</p>
+    </div>
+    <div class="section-body">
+      <div class="kw-cloud">
+        {% for row in analytics.weekly_keywords %}
+        <span class="kw">{{ row.keyword }} · {{ row.count }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Source hit rate -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Source Hit Rate</p>
+      <p class="section-sub">How often each source lands an article in the daily top 10 — last 7 days</p>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Source</th>
+          <th>Fetched</th>
+          <th>Top-10 Hits</th>
+          <th>Hit Rate</th>
+          <th class="col-bar"></th>
+        </tr>
+        {% for row in analytics.source_hit_rate %}
+        {% set pct = row.hit_rate_pct %}
+        <tr>
+          <td style="color:var(--text-1)">{{ row.source }}</td>
+          <td>{{ row.total }}</td>
+          <td>{{ row.top10_count }}</td>
+          <td class="{% if pct >= 40 %}c-green{% elif pct >= 20 %}c-amber{% else %}c-red{% endif %}">
+            {{ pct }}%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:{{ pct|int }}%"></div>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer>AI & Tech Digest</footer>
+
+</body>
+</html>

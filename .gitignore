@@ -1,0 +1,15 @@
+# secrets
+.env
+
+# python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# generated output (deployed to gh-pages, not committed to main)
+output/
+
+# local notes
+job_description.md
+docs/
