@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — AI & Tech Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0c0c0c;
+      --surface:       #161616;
+      --surface-hover: #1e1e1e;
+      --border:        rgba(255,255,255,0.08);
+      --border-hover:  rgba(255,255,255,0.14);
+      --text-1:        #f2f2f2;
+      --text-2:        #b4b4b4;
+      --text-3:        #787878;
+      --cyan:          #06d6f5;
+      --violet:        #a78bfa;
+      --green:         #34d399;
+      --red:           #f87171;
+      --amber:         #fbbf24;
+      --r:             10px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ──────────────────────────────────── */
+    .topbar {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .topbar-date {
+      font-size: 0.78rem;
+      color: var(--text-3);
+    }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      padding: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.28rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.14s, color 0.14s;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-1);
+    }
+
+    /* ── Layout ───────────────────────────────────── */
+    main {
+      max-width: 1080px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .topbar { flex-direction: column; gap: 0.2rem; }
+      main { padding: 0 1rem; }
+    }
+
+    /* ── Section card ─────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .section-header {
+      padding: 1.1rem 1.5rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .section-sub {
+      font-size: 0.76rem;
+      color: var(--text-3);
+      margin-top: 0.2rem;
+    }
+    .section-body { padding: 1.25rem 1.5rem; }
+
+    /* ── Table ────────────────────────────────────── */
+    table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    th {
+      text-align: left;
+      color: var(--text-3);
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: .04em;
+      padding: 0 0 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-2);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    td a { color: var(--text-1); text-decoration: none; }
+    td a:hover { text-decoration: underline; text-decoration-color: rgba(255,255,255,0.2); }
+    td strong { color: var(--cyan); font-weight: 700; }
+
+    /* score column — first col */
+    .col-score { width: 4rem; }
+    .col-bar   { width: 30%; }
+
+    /* ── Progress bar ─────────────────────────────── */
+    .bar-wrap {
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      height: 4px;
+    }
+    .bar {
+      background: linear-gradient(90deg, #4f46e5, var(--violet));
+      border-radius: 99px;
+      height: 4px;
+    }
+
+    /* ── Status colours ───────────────────────────── */
+    .c-green  { color: var(--green);  font-weight: 600; }
+    .c-red    { color: var(--red);    font-weight: 600; }
+    .c-amber  { color: var(--amber);  font-weight: 600; }
+    .c-dim    { color: var(--text-3); }
+
+    /* ── Keyword cloud ────────────────────────────── */
+    .kw-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .kw {
+      font-size: 0.73rem;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 0.18rem 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-3);
+      font-size: 0.73rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-title">Analytics Dashboard</span>
+  <span class="topbar-date">June 10, 2026 · AI & Tech Digest</span>
+</div>
+
+<nav>
+  <a href="digest.html">Digest</a>
+  <a href="analytics.html">Analytics</a>
+</nav>
+
+<main>
+
+  <!-- 1. Weekly top articles -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Top Articles This Week</p>
+      <p class="section-sub">Highest-scored stories from the past 7 days</p>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th class="col-score">Score</th>
+          <th>Title</th>
+          <th>Source</th>
+        </tr>
+        
+        <tr>
+          <td><strong>8/10</strong></td>
+          <td><a href="https://www.wired.com/story/openai-confidentially-files-for-ipo/" target="_blank" rel="noopener">OpenAI Confidentially Files for IPO on the Heels of SpaceX and Anthropic</a></td>
+          <td>Wired</td>
+        </tr>
+        
+        <tr>
+          <td><strong>8/10</strong></td>
+          <td><a href="https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/" target="_blank" rel="noopener">OpenAI files confidentially for IPO, following Anthropic</a></td>
+          <td>TechCrunch</td>
+        </tr>
+        
+        <tr>
+          <td><strong>8/10</strong></td>
+          <td><a href="https://www.macrumors.com/2026/06/08/apple-reveals-new-ai-architecture/" target="_blank" rel="noopener">Apple reveals new AI architecture built around Google Gemini models</a></td>
+          <td>Hacker News</td>
+        </tr>
+        
+        <tr>
+          <td><strong>8/10</strong></td>
+          <td><a href="https://huggingface.co/blog/Dharma-AI/direct-preference-optimization-beyond-chatbots" target="_blank" rel="noopener">Direct Preference Optimization Beyond Chatbots</a></td>
+          <td>HuggingFace</td>
+        </tr>
+        
+        <tr>
+          <td><strong>8/10</strong></td>
+          <td><a href="https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free" target="_blank" rel="noopener">Claude Code costs up to $200 a month. Goose does the same thing for free.</a></td>
+          <td>VentureBeat AI</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+  <!-- 2. Topic velocity -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Topic Velocity</p>
+      <p class="section-sub">Which topics are rising, falling, or brand new compared to last week</p>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Keyword</th>
+          <th>This Week</th>
+          <th>Last Week</th>
+          <th>Change</th>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">llm</td>
+          <td>8</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">anthropic</td>
+          <td>6</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">claude</td>
+          <td>4</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">apple</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">openai</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">ipo</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">google</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">reinforcement learning</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">agents</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">huggingface</td>
+          <td>2</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. Weekly keywords -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Weekly Keywords</p>
+      <p class="section-sub">Most frequent terms across top articles in the last 7 days</p>
+    </div>
+    <div class="section-body">
+      <div class="kw-cloud">
+        
+        <span class="kw">llm · 8</span>
+        
+        <span class="kw">anthropic · 6</span>
+        
+        <span class="kw">claude · 4</span>
+        
+        <span class="kw">apple · 2</span>
+        
+        <span class="kw">openai · 2</span>
+        
+        <span class="kw">ipo · 2</span>
+        
+        <span class="kw">google · 2</span>
+        
+        <span class="kw">reinforcement learning · 2</span>
+        
+        <span class="kw">agents · 2</span>
+        
+        <span class="kw">huggingface · 2</span>
+        
+        <span class="kw">developer tools · 2</span>
+        
+        <span class="kw">pricing · 2</span>
+        
+        <span class="kw">ai safety · 2</span>
+        
+        <span class="kw">apple intelligence · 1</span>
+        
+        <span class="kw">on-device ai · 1</span>
+        
+        <span class="kw">product launch · 1</span>
+        
+        <span class="kw">ai industry · 1</span>
+        
+        <span class="kw">ai companies · 1</span>
+        
+        <span class="kw">gemini · 1</span>
+        
+        <span class="kw">ai integration · 1</span>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Source hit rate -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Source Hit Rate</p>
+      <p class="section-sub">How often each source lands an article in the daily top 10 — last 7 days</p>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Source</th>
+          <th>Fetched</th>
+          <th>Top-10 Hits</th>
+          <th>Hit Rate</th>
+          <th class="col-bar"></th>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:var(--text-1)">HuggingFace</td>
+          <td>9</td>
+          <td>7</td>
+          <td class="c-green">
+            77.8%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:77%"></div>
+            </div>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:var(--text-1)">Hacker News</td>
+          <td>10</td>
+          <td>5</td>
+          <td class="c-green">
+            50.0%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:50%"></div>
+            </div>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:var(--text-1)">TechCrunch</td>
+          <td>10</td>
+          <td>4</td>
+          <td class="c-green">
+            40.0%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:40%"></div>
+            </div>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:var(--text-1)">Wired</td>
+          <td>10</td>
+          <td>2</td>
+          <td class="c-amber">
+            20.0%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:20%"></div>
+            </div>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:var(--text-1)">VentureBeat AI</td>
+          <td>5</td>
+          <td>1</td>
+          <td class="c-amber">
+            20.0%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:20%"></div>
+            </div>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td style="color:var(--text-1)">The Verge</td>
+          <td>10</td>
+          <td>1</td>
+          <td class="c-red">
+            10.0%
+          </td>
+          <td>
+            <div class="bar-wrap">
+              <div class="bar" style="width:10%"></div>
+            </div>
+          </td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer>AI & Tech Digest</footer>
+
+</body>
+</html>
