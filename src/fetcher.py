@@ -1,13 +1,14 @@
 import feedparser
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
 
-from config import FEEDS, MAX_ARTICLES_PER_FEED
+from config import FEEDS, MAX_ARTICLES_PER_FEED, MAX_ARTICLE_AGE_HOURS
 
 
 def fetch_all_articles() -> list[dict]:
-    """Go through every feed, collect articles, return them as a list."""
+    """Go through every feed, collect articles published within the last 24 hours."""
     all_articles = []
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=MAX_ARTICLE_AGE_HOURS)
 
     for feed_config in FEEDS:
         try:
@@ -23,7 +24,8 @@ def fetch_all_articles() -> list[dict]:
                     "source":    feed_config["name"],
                     "category":  feed_config["category"],
                 }
-                all_articles.append(article)
+                if article["published"] >= cutoff:
+                    all_articles.append(article)
 
         except Exception as e:
             print(f"[fetcher] Could not fetch {feed_config['name']}: {e}")

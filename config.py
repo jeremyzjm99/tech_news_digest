@@ -8,6 +8,7 @@ CLAUDE_MODEL = "claude-sonnet-4-6"
 # ── Pipeline settings ─────────────────────────────────────────────────────────
 MAX_ARTICLES_PER_FEED = 5        # how many articles to pull from each source
 TOP_ARTICLES_TO_SUMMARIZE = 10   # how many articles Claude summarizes per day
+MAX_ARTICLE_AGE_HOURS = 24       # only keep articles published within the last 24 hours
 
 # ── News sources ──────────────────────────────────────────────────────────────
 # Each source has a URL (the RSS feed) and a category (AI/ML or Tech)

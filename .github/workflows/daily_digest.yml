@@ -2,7 +2,7 @@ name: Daily Digest
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # noon UTC = 8 AM EST every day
+    - cron: '0 22 * * *'   # 22:00 UTC = 6 PM EDT, captures a full day of tech news
   workflow_dispatch:         # also allow manual trigger from GitHub UI
 
 jobs:
