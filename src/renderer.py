@@ -1,3 +1,4 @@
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -14,6 +15,7 @@ def render_digest(top_articles: list[dict], overview: str, analytics: dict):
     _OUTPUT_DIR.mkdir(exist_ok=True)
 
     env = Environment(loader=FileSystemLoader(str(_TEMPLATES_DIR)))
+    env.filters["tojson"] = json.dumps
     today = datetime.now(timezone.utc).strftime("%B %d, %Y")
 
     _render("digest.html", env, "digest.html", {

@@ -1,5 +1,6 @@
 import sqlite3
-from collections import Counter
+from collections import Counter, defaultdict
+from datetime import datetime, timedelta
 
 from config import DATABASE_PATH
 
@@ -12,6 +13,7 @@ def run_analytics() -> dict:
             "weekly_keywords":  _top_keywords(conn),
             "top_articles":     _weekly_top_articles(conn),
             "topic_velocity":   _topic_velocity(conn),
+            "topic_trend":      _topic_trend(conn),
         }
 
 
@@ -112,3 +114,48 @@ def _topic_velocity(conn, top_n: int = 10) -> list[dict]:
     # Sort: new keywords first, then by growth rate descending
     results.sort(key=lambda x: (x["growth"] is not None, -(x["growth"] or 0), -x["this_week"]))
     return results[:top_n]
+
+
+def _topic_trend(conn, n_weeks: int = 6, top_n: int = 6) -> dict:
+    """
+    Keyword frequency per week for the past n_weeks.
+    Returns the top_n most frequent keywords overall, with per-week counts.
+    Used for the multi-week line chart — data fills in over time.
+    """
+    days = n_weeks * 7
+    rows = conn.execute(f"""
+        SELECT keywords, DATE(created_at) AS date
+          FROM articles
+         WHERE keywords IS NOT NULL AND keywords != ''
+           AND created_at >= DATE('now', '-{days} days')
+    """).fetchall()
+
+    week_counts = defaultdict(Counter)
+    week_labels = {}
+
+    for row in rows:
+        date = datetime.strptime(row["date"], "%Y-%m-%d")
+        week_start = date - timedelta(days=date.weekday())   # Monday
+        week_key   = week_start.strftime("%Y-%m-%d")         # for sorting
+        week_labels[week_key] = week_start.strftime("%b %d") # for display
+        for kw in row["keywords"].split(","):
+            word = kw.strip().lower()
+            if word:
+                week_counts[week_key][word] += 1
+
+    if not week_counts:
+        return {"labels": [], "series": []}
+
+    total = Counter()
+    for c in week_counts.values():
+        total.update(c)
+    top_keywords = [kw for kw, _ in total.most_common(top_n)]
+
+    sorted_weeks = sorted(week_counts.keys())
+    return {
+        "labels": [week_labels[w] for w in sorted_weeks],
+        "series": [
+            {"keyword": kw, "counts": [week_counts[w].get(kw, 0) for w in sorted_weeks]}
+            for kw in top_keywords
+        ],
+    }
