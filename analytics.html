@@ -6,6 +6,7 @@
   <title>Analytics — AI & Tech Digest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -183,7 +184,7 @@
 
 <div class="topbar">
   <span class="topbar-title">Analytics Dashboard</span>
-  <span class="topbar-date">June 10, 2026 · AI & Tech Digest</span>
+  <span class="topbar-date">June 11, 2026 · AI & Tech Digest</span>
 </div>
 
 <nav>
@@ -205,6 +206,12 @@
           <th class="col-score">Score</th>
           <th>Title</th>
           <th>Source</th>
+        </tr>
+        
+        <tr>
+          <td><strong>9/10</strong></td>
+          <td><a href="https://huggingface.co/blog/torch-mlp-fusion" target="_blank" rel="noopener">Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP</a></td>
+          <td>HuggingFace</td>
         </tr>
         
         <tr>
@@ -231,17 +238,24 @@
           <td>HuggingFace</td>
         </tr>
         
-        <tr>
-          <td><strong>8/10</strong></td>
-          <td><a href="https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free" target="_blank" rel="noopener">Claude Code costs up to $200 a month. Goose does the same thing for free.</a></td>
-          <td>VentureBeat AI</td>
-        </tr>
-        
       </table>
     </div>
   </div>
 
-  <!-- 2. Topic velocity -->
+  <!-- 2. Keyword trend chart -->
+  <div class="section">
+    <div class="section-header">
+      <p class="section-title">Keyword Trends — Past 6 Weeks</p>
+      <p class="section-sub">Top keywords by frequency, tracked week over week</p>
+    </div>
+    <div class="section-body">
+      
+      <canvas id="trendChart" height="100"></canvas>
+      
+    </div>
+  </div>
+
+  <!-- 3. Topic velocity -->
   <div class="section">
     <div class="section-header">
       <p class="section-title">Topic Velocity</p>
@@ -258,7 +272,7 @@
         
         <tr>
           <td style="color:var(--text-1)">llm</td>
-          <td>9</td>
+          <td>10</td>
           <td>0</td>
           <td>
             
@@ -279,19 +293,8 @@
         </tr>
         
         <tr>
-          <td style="color:var(--text-1)">claude</td>
-          <td>4</td>
-          <td>0</td>
-          <td>
-            
-              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
           <td style="color:var(--text-1)">ai safety</td>
-          <td>4</td>
+          <td>5</td>
           <td>0</td>
           <td>
             
@@ -302,6 +305,17 @@
         
         <tr>
           <td style="color:var(--text-1)">cybersecurity</td>
+          <td>5</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">claude</td>
           <td>4</td>
           <td>0</td>
           <td>
@@ -324,7 +338,7 @@
         
         <tr>
           <td style="color:var(--text-1)">openai</td>
-          <td>2</td>
+          <td>3</td>
           <td>0</td>
           <td>
             
@@ -335,7 +349,18 @@
         
         <tr>
           <td style="color:var(--text-1)">ipo</td>
-          <td>2</td>
+          <td>3</td>
+          <td>0</td>
+          <td>
+            
+              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td style="color:var(--text-1)">data breach</td>
+          <td>3</td>
           <td>0</td>
           <td>
             
@@ -346,17 +371,6 @@
         
         <tr>
           <td style="color:var(--text-1)">google</td>
-          <td>2</td>
-          <td>0</td>
-          <td>
-            
-              <span class="c-cyan" style="color:var(--cyan);font-weight:600">NEW</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td style="color:var(--text-1)">xai</td>
           <td>2</td>
           <td>0</td>
           <td>
@@ -379,21 +393,23 @@
     <div class="section-body">
       <div class="kw-cloud">
         
-        <span class="kw">llm · 9</span>
+        <span class="kw">llm · 10</span>
         
         <span class="kw">anthropic · 7</span>
         
+        <span class="kw">ai safety · 5</span>
+        
+        <span class="kw">cybersecurity · 5</span>
+        
         <span class="kw">claude · 4</span>
-        
-        <span class="kw">ai safety · 4</span>
-        
-        <span class="kw">cybersecurity · 4</span>
         
         <span class="kw">apple · 3</span>
         
-        <span class="kw">openai · 2</span>
+        <span class="kw">openai · 3</span>
         
-        <span class="kw">ipo · 2</span>
+        <span class="kw">ipo · 3</span>
+        
+        <span class="kw">data breach · 3</span>
         
         <span class="kw">google · 2</span>
         
@@ -409,15 +425,13 @@
         
         <span class="kw">developer tools · 2</span>
         
+        <span class="kw">open-source · 2</span>
+        
         <span class="kw">pricing · 2</span>
         
-        <span class="kw">policy · 2</span>
+        <span class="kw">code generation · 2</span>
         
-        <span class="kw">data breach · 2</span>
-        
-        <span class="kw">apple intelligence · 1</span>
-        
-        <span class="kw">on-device ai · 1</span>
+        <span class="kw">mlops · 2</span>
         
       </div>
     </div>
@@ -442,14 +456,14 @@
         
         <tr>
           <td style="color:var(--text-1)">HuggingFace</td>
-          <td>9</td>
-          <td>7</td>
+          <td>10</td>
+          <td>8</td>
           <td class="c-green">
-            77.8%
+            80.0%
           </td>
           <td>
             <div class="bar-wrap">
-              <div class="bar" style="width:77%"></div>
+              <div class="bar" style="width:80%"></div>
             </div>
           </td>
         </tr>
@@ -457,8 +471,8 @@
         
         <tr>
           <td style="color:var(--text-1)">TechCrunch</td>
-          <td>15</td>
-          <td>9</td>
+          <td>20</td>
+          <td>12</td>
           <td class="c-green">
             60.0%
           </td>
@@ -472,14 +486,14 @@
         
         <tr>
           <td style="color:var(--text-1)">Hacker News</td>
-          <td>14</td>
-          <td>7</td>
+          <td>19</td>
+          <td>9</td>
           <td class="c-green">
-            50.0%
+            47.4%
           </td>
           <td>
             <div class="bar-wrap">
-              <div class="bar" style="width:50%"></div>
+              <div class="bar" style="width:47%"></div>
             </div>
           </td>
         </tr>
@@ -487,14 +501,14 @@
         
         <tr>
           <td style="color:var(--text-1)">Wired</td>
-          <td>15</td>
-          <td>3</td>
+          <td>20</td>
+          <td>6</td>
           <td class="c-amber">
-            20.0%
+            30.0%
           </td>
           <td>
             <div class="bar-wrap">
-              <div class="bar" style="width:20%"></div>
+              <div class="bar" style="width:30%"></div>
             </div>
           </td>
         </tr>
@@ -517,8 +531,8 @@
         
         <tr>
           <td style="color:var(--text-1)">The Verge</td>
-          <td>15</td>
-          <td>3</td>
+          <td>20</td>
+          <td>4</td>
           <td class="c-amber">
             20.0%
           </td>
@@ -536,6 +550,58 @@
 </main>
 
 <footer>AI & Tech Digest</footer>
+
+<script>
+(function () {
+  const trend = {"labels": ["Jun 08"], "series": [{"keyword": "llm", "counts": [10]}, {"keyword": "anthropic", "counts": [7]}, {"keyword": "ai safety", "counts": [5]}, {"keyword": "cybersecurity", "counts": [5]}, {"keyword": "claude", "counts": [4]}, {"keyword": "apple", "counts": [3]}]};
+  if (!trend.labels || trend.labels.length === 0) return;
+
+  const COLORS = ['#06d6f5','#a78bfa','#34d399','#fbbf24','#f87171','#60a5fa'];
+
+  new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: {
+      labels: trend.labels,
+      datasets: trend.series.map((s, i) => ({
+        label:            s.keyword,
+        data:             s.counts,
+        borderColor:      COLORS[i % COLORS.length],
+        backgroundColor:  'transparent',
+        tension:          0.3,
+        pointRadius:      4,
+        pointHoverRadius: 6,
+        borderWidth:      2,
+      }))
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: { color: 'rgba(255,255,255,0.45)', boxWidth: 12, font: { size: 12 } }
+        },
+        tooltip: {
+          backgroundColor: '#1e1e1e',
+          titleColor:      '#f2f2f2',
+          bodyColor:       '#b4b4b4',
+          borderColor:     'rgba(255,255,255,0.08)',
+          borderWidth:     1,
+        }
+      },
+      scales: {
+        x: {
+          grid:  { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: 'rgba(255,255,255,0.35)', font: { size: 11 } }
+        },
+        y: {
+          beginAtZero: true,
+          grid:  { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: 'rgba(255,255,255,0.35)', font: { size: 11 }, stepSize: 1 }
+        }
+      }
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
