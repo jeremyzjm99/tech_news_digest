@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — June 16, 2026</title>
+  <title>AI & Tech Digest — June 17, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">June 16, 2026</span>
+  <span class="topbar-date">June 17, 2026</span>
 </div>
 
 <nav>
@@ -223,43 +223,12 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest spans the full arc of the tech landscape, from existential questions to everyday tricks. Wired sounds the alarm on "dangerous" AI models arriving whether we're ready or not, while Anthropic apparently turns political friction with the Trump administration into a sales tailwind — a reminder that controversy can be its own kind of marketing. On the hardware side, Qualcomm is quietly positioning itself as the silicon backbone of the post-smartphone era, SpaceX's valuation briefly eclipsed Amazon's at a staggering $2.6 trillion (and the company may soon add Cursor to its portfolio for $60B), and Qualcomm's ambitions are matched only by the momentum building around Android 17, Wear OS 7, and Android XR. Rounding things out for the builders in the room: local model inference has gotten genuinely good, GrapheneOS is already tracking Android 17, a FIFA World Cup broadcast system had a rather alarming open-door vulnerability, and — for the terminal nerds — you can apparently ditch curl entirely and make HTTP requests straight from Bash via `/dev/tcp`.</p>
+  <p>Today's digest is dominated by Anthropic, which finds itself navigating a perfect storm of regulatory pressure, geopolitical complexity, and technical limitation — from mysterious export control entanglements and a Korean telecom partner at the center of a mythology controversy, to the White House demanding airtight jailbreak prevention that experts say may simply be impossible. Meanwhile, the AI industry's financial reality check continues as leaked documents reveal OpenAI is burning billions annually, even as enterprises struggle to demonstrate concrete ROI from their AI investments — a theme NEA's Tiffany Luck unpacks in a candid TechCrunch interview. On the model front, China's GLM-5.2 has quietly claimed the top spot among open-weights models on Artificial Analysis, optimized for long-horizon tasks and raising fresh questions about where the frontier actually sits — particularly as the US holds off on blacklisting DeepSeek while scrutinizing over 100 firms for security risks. Rounding out the day, the open-source ecosystem pushes further into embodied AI, with new work on language-guided 3D motion forecasting and a pipeline bridging Hugging Face's Hub directly to physical robot hardware via Strands Agents and LeRobot.</p>
 </div>
 
 <main>
   <p class="label" style="margin-bottom:1rem">Top Stories</p>
   <div class="grid">
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Policy</span>
-        <span class="source">The Verge</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.theverge.com/ai-artificial-intelligence/949644/china-white-house-anthropic-mythos" target="_blank" rel="noopener">China may have accessed Mythos</a>
-      </p>
-      
-      <p class="card-summary">The White House imposed export restrictions on Anthropic's AI model 'Mythos' following concerns that a China-linked group may have gained unauthorized access to it, according to a Semafor report. If confirmed, Chinese government access to advanced models like Mythos 5 or Fable 5 would pose significant national security risks. The situation highlights growing geopolitical tensions around access to cutting-edge AI systems.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Anthropic</span>
-        
-        <span class="kw">export restrictions</span>
-        
-        <span class="kw">national security</span>
-        
-        <span class="kw">China</span>
-        
-        <span class="kw">AI policy</span>
-        
-      </div>
-      
-    </div>
     
     <div class="card">
       <div class="card-meta">
@@ -353,27 +322,145 @@
     <div class="card">
       <div class="card-meta">
         <span class="badge">Policy</span>
-        <span class="source">Hacker News</span>
-        <span class="score mid">
-          7/10
+        <span class="source">Wired</span>
+        <span class="score high">
+          8/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://github.com/nex-agi/Nex-N2/issues/4" target="_blank" rel="noopener">Rio de Janeiro's "homegrown" LLM appears to be a merge of an existing model</a>
+        <a href="https://www.wired.com/story/sk-telecom-anthropic-mythos-export-controls/" target="_blank" rel="noopener">The Korean Telecom Giant at the Center of Anthropic’s Mythos Controversy</a>
       </p>
       
-      <p class="card-summary">Rio de Janeiro's government claimed to have developed a homegrown large language model, but it appears to actually be a merge or fine-tune of an already existing open-source model rather than an original creation. This raises concerns about transparency and the authenticity of government AI initiatives. The story highlights the growing scrutiny around organizations overstating the originality of their AI development efforts.</p>
+      <p class="card-summary">The White House directed Anthropic to cut off SK Telecom's access to its advanced Claude Mythos AI models, citing the South Korean telecom company's alleged ties to China. This directive came shortly before Anthropic took the Mythos models offline entirely. The situation highlights growing government scrutiny over which foreign entities can access cutting-edge U.S. AI systems.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">Claude</span>
+        
+        <span class="kw">AI access</span>
+        
+        <span class="kw">national security</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">The Verge</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.theverge.com/ai-artificial-intelligence/951703/anthropic-shutdown-export-controls" target="_blank" rel="noopener">Anthropic got hit by export rules nobody understands</a>
+      </p>
+      
+      <p class="card-summary">The Trump administration abruptly ordered Anthropic to cut AI model access for all foreign nationals, including users inside the US and Anthropic's own employees, citing export control rules. This forced Anthropic to take its newest models, Fable 5 and Mythos 5, fully offline while the company scrambled to restore access. The situation highlights the growing and often unclear impact of US export regulations on AI companies and their operations.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">export controls</span>
+        
+        <span class="kw">regulation</span>
+        
+        <span class="kw">AI access</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">Wired</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.wired.com/story/the-white-house-wants-anthropic-to-block-all-jailbreaks-that-may-not-be-possible/" target="_blank" rel="noopener">The White House Wants Anthropic to Block All Jailbreaks. That May Not Be Possible</a>
+      </p>
+      
+      <p class="card-summary">The Trump administration is requiring Anthropic to fully prevent jailbreaks on its AI model as a condition for rereleasing it, according to reporting by WIRED. Security experts argue this is technically infeasible, as no AI model can be made completely immune to prompt manipulation or guardrail bypasses. This tension highlights a growing conflict between government AI safety demands and the practical limitations of current AI security capabilities.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">jailbreaks</span>
+        
+        <span class="kw">AI safety</span>
+        
+        <span class="kw">guardrails</span>
+        
+        <span class="kw">regulation</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index" target="_blank" rel="noopener">GLM-5.2 is the new leading open weights model on Artificial Analysis</a>
+      </p>
+      
+      <p class="card-summary">GLM-5.2 has claimed the top spot among open weights language models on the Artificial Analysis leaderboard, making it the highest-performing publicly available model by that benchmark. This is notable for data professionals as open weights models allow for self-hosting and fine-tuning without reliance on proprietary APIs. The development signals continued rapid progress in the open-source AI model ecosystem.</p>
       
       
       <div class="keywords">
         
         <span class="kw">LLM</span>
         
-        <span class="kw">open-source</span>
+        <span class="kw">open weights</span>
         
-        <span class="kw">government AI</span>
+        <span class="kw">benchmark</span>
         
-        <span class="kw">model merging</span>
+        <span class="kw">leaderboard</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/zai-org/glm-52-blog" target="_blank" rel="noopener">GLM-5.2: Built for Long-Horizon Tasks</a>
+      </p>
+      
+      <p class="card-summary">GLM-5.2 is a new language model release highlighted on HuggingFace, designed specifically to handle long-horizon tasks that require sustained reasoning or multi-step execution over extended contexts. The model appears to target complex, extended workflows that challenge standard LLMs. No additional details were provided in the source blurb.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">GLM</span>
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">long-context</span>
+        
+        <span class="kw">reasoning</span>
         
       </div>
       
@@ -434,95 +521,6 @@
         <span class="kw">LLM</span>
         
         <span class="kw">model access</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Consumer</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/15/metas-new-ai-mode-on-facebook-pulls-from-public-info-across-its-platforms/" target="_blank" rel="noopener">Meta’s new ‘AI Mode’ on Facebook pulls from public info across its platforms</a>
-      </p>
-      
-      <p class="card-summary">Meta is rolling out a new 'AI Mode' on Facebook that draws from public information across its platforms, representing the company's latest push to integrate AI features into its core products. The move signals Meta's ongoing effort to compete in the rapidly evolving AI landscape while driving deeper user engagement on Facebook. This is part of a broader wave of AI features the company announced this week.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Meta</span>
-        
-        <span class="kw">AI features</span>
-        
-        <span class="kw">Facebook</span>
-        
-        <span class="kw">user engagement</span>
-        
-        <span class="kw">generative AI</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/" target="_blank" rel="noopener">Anthropic’s latest feud with the Trump admin may actually help it, sales data suggests</a>
-      </p>
-      
-      <p class="card-summary">Anthropic's business user adoption continues to grow strongly, with sales data from Ramp suggesting that its recent conflict with the Trump administration may actually be driving increased enterprise interest rather than hurting it. The data implies that controversy with the government is not deterring business customers and may even be boosting Anthropic's appeal among corporate users. This trend highlights Anthropic's resilience and growing competitive position in the enterprise AI market.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Anthropic</span>
-        
-        <span class="kw">enterprise AI</span>
-        
-        <span class="kw">Claude</span>
-        
-        <span class="kw">AI adoption</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/16/qualcomm-wants-to-be-the-chip-inside-whatever-replaces-your-smartphone-and-it-just-announced-two-products-toward-that-end/" target="_blank" rel="noopener">Qualcomm wants to be the chip inside whatever replaces your smartphone, and it just announced two products toward that end</a>
-      </p>
-      
-      <p class="card-summary">Qualcomm is positioning itself as the core chipmaker for the next generation of computing devices beyond smartphones, with CEO Cristiano Amon announcing partnerships on over 40 AI-powered wearables. These include smart jewelry, camera-equipped earbuds, pins, and watches, signaling a major strategic bet on wearables as the next dominant computing platform. The move reflects broader industry momentum toward ambient, always-on AI hardware.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Qualcomm</span>
-        
-        <span class="kw">AI hardware</span>
-        
-        <span class="kw">wearables</span>
-        
-        <span class="kw">edge AI</span>
         
       </div>
       
