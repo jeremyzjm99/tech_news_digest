@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — June 26, 2026</title>
+  <title>AI & Tech Digest — June 27, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">June 26, 2026</span>
+  <span class="topbar-date">June 27, 2026</span>
 </div>
 
 <nav>
@@ -223,41 +223,12 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is dominated by a swirling constellation of AI governance, model releases, and the geopolitics of frontier technology. OpenAI finds itself at the center of the storm on multiple fronts: GPT-5.6 is rolling out — but not to everyone, with the U.S. government stepping in to control access, raising pointed questions about who gets to define the boundaries of powerful AI and whether regulatory intervention sets a troubling precedent. Meanwhile, the chip wars are heating up as OpenAI, SpaceX, and their peers accelerate custom silicon efforts to chip away at Nvidia's dominance, and the perennial debate between open-weights and closed-source LLMs continues to sharpen as the capability gap narrows. Rounding things out, there's a thread of scrappy ingenuity running through the day's stories — from Chinese users outmaneuvering Anthropic's geo-restrictions to a C++ hopscotch hash map making the rounds on Hacker News — a reminder that the most interesting moves in tech often happen at the margins.</p>
+  <p>Today's digest is a whirlwind of accelerating AI capabilities, security landmines, and the geopolitical chess match reshaping the tech supply chain. On the inference front, DSpark's speculative decoding approach promises meaningful LLM speed gains, while an anonymous GitHub account is quietly dumping undisclosed zero-days into the wild — a reminder that the attack surface is expanding as fast as the tooling. The AI talent and hardware wars are heating up too: an Apple Vision Pro exec is reportedly jumping ship to OpenAI, Asian startups are rushing to fill the model vacuum left by Anthropic's export restrictions, and SoftBank is pushing back on the hype surrounding Elon Musk's orbital data center ambitions. Rounding out the day, Apple is seeking permission to source memory from a blacklisted Chinese supplier, LastPass users are once again dealing with the fallout of a data breach, and one founder's deeply personal story of using AI to navigate a cancer diagnosis offers a more human lens on what this technology can mean beyond the benchmark wars.</p>
 </div>
 
 <main>
   <p class="label" style="margin-bottom:1rem">Top Stories</p>
   <div class="grid">
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Infrastructure</span>
-        <span class="source">Hacker News</span>
-        <span class="score high">
-          9/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" rel="noopener">OpenAI unveils its first custom chip, built by Broadcom</a>
-      </p>
-      
-      <p class="card-summary">OpenAI has unveiled its first custom AI chip, developed in partnership with Broadcom. This marks a significant step toward reducing OpenAI's reliance on third-party hardware providers like Nvidia, potentially lowering compute costs and giving the company greater control over its AI infrastructure. The custom silicon is designed to support OpenAI's growing demand for AI training and inference workloads.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">OpenAI</span>
-        
-        <span class="kw">custom chip</span>
-        
-        <span class="kw">Broadcom</span>
-        
-        <span class="kw">AI hardware</span>
-        
-      </div>
-      
-    </div>
     
     <div class="card">
       <div class="card-meta">
@@ -352,28 +323,28 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">TechCrunch</span>
+        <span class="badge">Research</span>
+        <span class="source">Hacker News</span>
         <span class="score high">
-          8/10
+          9/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/24/ai-was-supposed-to-kill-engineering-jobs-but-new-data-suggests-theyre-the-most-resilient/" target="_blank" rel="noopener">AI was supposed to kill engineering jobs, but new data suggests they’re the most resilient</a>
+        <a href="https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf" target="_blank" rel="noopener">DSpark: Speculative decoding accelerates LLM inference [pdf]</a>
       </p>
       
-      <p class="card-summary">Contrary to fears that AI would eliminate engineering roles, new data from SignalFire shows that engineers are actually growing as a share of new hires. While AI-related layoffs dominate headlines, the data suggests engineering positions are among the most resilient in the current job market. This challenges the prevailing narrative that AI adoption directly displaces technical talent.</p>
+      <p class="card-summary">DSpark introduces a speculative decoding technique to speed up inference in large language models (LLMs). The approach uses a smaller draft model to predict multiple tokens at once, which a larger model then verifies in parallel, reducing the number of sequential steps required. This can significantly lower latency without sacrificing output quality.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">AI hiring</span>
+        <span class="kw">LLM</span>
         
-        <span class="kw">engineering jobs</span>
+        <span class="kw">inference</span>
         
-        <span class="kw">workforce</span>
+        <span class="kw">speculative decoding</span>
         
-        <span class="kw">labor market</span>
+        <span class="kw">optimization</span>
         
       </div>
       
@@ -501,26 +472,59 @@
       <div class="card-meta">
         <span class="badge">Industry</span>
         <span class="source">TechCrunch</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/" target="_blank" rel="noopener">Asian AI startups launch Mythos-like  models as Anthropic’s export ban drags on</a>
+      </p>
+      
+      <p class="card-summary">Asian AI startups are releasing models with capabilities comparable to Anthropic's Claude (referred to as 'Mythos') as Anthropic's export restrictions continue to limit its reach in Asian markets. These regional competitors are filling the gap left by U.S. AI labs, offering similar performance without the constraints of U.S. export controls. Analysts suggest American AI companies risk permanently losing significant market share across Asia as a result.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">export controls</span>
+        
+        <span class="kw">AI competition</span>
+        
+        <span class="kw">Asia</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">The Verge</span>
         <span class="score mid">
           7/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" target="_blank" rel="noopener">AI researchers continue to leave Google for its rivals</a>
+        <a href="https://www.theverge.com/ai-artificial-intelligence/957372/openai-will-delay-gpt-5-6-after-trump-administration-request" target="_blank" rel="noopener">OpenAI will delay GPT-5.6 after Trump administration request</a>
       </p>
       
-      <p class="card-summary">Several prominent AI researchers are departing Google for competitors, with Jonas Adler and Alexander Pritzel recently joining Anthropic. This follows earlier high-profile exits, including Noam Shazeer and Nobel Prize-winning John Jumper. The trend highlights intensifying talent competition across leading AI organizations.</p>
+      <p class="card-summary">The Trump administration has asked OpenAI to delay the full release of its upcoming GPT-5.6 model due to security concerns. OpenAI CEO Sam Altman informed employees that the model will initially launch in a limited preview, available only to a select group of users. The phased rollout appears to be a direct response to government pressure rather than a standard product release strategy.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">Google</span>
+        <span class="kw">OpenAI</span>
         
-        <span class="kw">Anthropic</span>
+        <span class="kw">GPT-5</span>
         
-        <span class="kw">AI talent</span>
+        <span class="kw">LLM</span>
         
-        <span class="kw">research</span>
+        <span class="kw">government</span>
+        
+        <span class="kw">model release</span>
         
       </div>
       
