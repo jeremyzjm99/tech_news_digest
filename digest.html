@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — June 29, 2026</title>
+  <title>AI & Tech Digest — June 30, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">June 29, 2026</span>
+  <span class="topbar-date">June 30, 2026</span>
 </div>
 
 <nav>
@@ -223,7 +223,7 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest spans the full arc of AI's expanding footprint — from the research lab to the boardroom to the living room. On the technical front, HuggingFace drops DiScoFormer, a unified transformer architecture bridging density estimation and score-based models, while the open-source community rallies around Qwen 3's 27B model as a pragmatic sweet spot for local inference workloads. The business and policy landscape is equally busy: Chamath is back with a $135M AI coding bet, Anthropic is cutting deals with California government, Gemini is opening up personalized image generation to US consumers for free, and Tidal is drawing a careful line on AI-generated music royalties. But it's not all momentum — Meta faces sharp scrutiny after contractors reportedly posed as teenagers to stress-test rival chatbots on sensitive topics, Waymo and Uber quietly unwind their Phoenix partnership, and a new `.self` TLD emerges as a quiet nod to the self-hosting faithful. Buckle up — there's a lot to unpack.</p>
+  <p>Today's digest is heavily Anthropic-flavored, with Claude making headlines on multiple fronts: a new Claude Sonnet 5 release, a dedicated Claude Science initiative, and — most intriguingly — reports that Claude Code may be steganographically watermarking its own requests, raising immediate questions about transparency and trust in agentic workflows. On the models-and-benchmarks front, Hugging Face is pushing for greater evaluation accountability by surfacing comprehensive eval results directly on model pages, while a new ScarfBench targets the niche but very real pain point of AI-assisted enterprise Java migration. Google is also keeping busy, with NotebookLM expanding into TikTok-style video summaries and the Nano Banana 2 Lite image generator promising faster, cheaper outputs — a reminder that the commoditization of generative media is accelerating fast. Rounding things out, a promising non-surgical brain-computer interface breakthrough hints at real progress in assistive communication, while a TechCrunch profile on the DeepMind poker AI alumni now running quant strategies is a timely reminder of how quickly frontier AI research talent finds its way into high-stakes financial applications.</p>
 </div>
 
 <main>
@@ -232,59 +232,30 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Research</span>
+        <span class="badge">Tools</span>
         <span class="source">Hacker News</span>
         <span class="score high">
           9/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf" target="_blank" rel="noopener">DSpark: Speculative decoding accelerates LLM inference [pdf]</a>
+        <a href="https://thereallo.dev/blog/claude-code-prompt-steganography" target="_blank" rel="noopener">Claude Code is steganographically marking requests</a>
       </p>
       
-      <p class="card-summary">DSpark introduces a speculative decoding technique to speed up inference in large language models (LLMs). The approach uses a smaller draft model to predict multiple tokens at once, which a larger model then verifies in parallel, reducing the number of sequential steps required. This can significantly lower latency without sacrificing output quality.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">LLM</span>
-        
-        <span class="kw">inference</span>
-        
-        <span class="kw">speculative decoding</span>
-        
-        <span class="kw">optimization</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">TechCrunch</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/" target="_blank" rel="noopener">Asian AI startups launch Mythos-like  models as Anthropic’s export ban drags on</a>
-      </p>
-      
-      <p class="card-summary">Asian AI startups are releasing models with capabilities comparable to Anthropic's Claude (referred to as 'Mythos') as Anthropic's export restrictions continue to limit its reach in Asian markets. These regional competitors are filling the gap left by U.S. AI labs, offering similar performance without the constraints of U.S. export controls. Analysts suggest American AI companies risk permanently losing significant market share across Asia as a result.</p>
+      <p class="card-summary">Users discovered that Claude Code, Anthropic's AI coding assistant, is embedding steganographic markers in its requests, meaning hidden identifying information is being encoded in ways not immediately visible to users. This raised concerns in the developer community about transparency and whether such tracking behavior was disclosed. The Hacker News discussion reflects broader worries about hidden data practices in AI developer tools.</p>
       
       
       <div class="keywords">
         
         <span class="kw">Anthropic</span>
         
-        <span class="kw">LLM</span>
+        <span class="kw">Claude</span>
         
-        <span class="kw">export controls</span>
+        <span class="kw">steganography</span>
         
-        <span class="kw">AI competition</span>
+        <span class="kw">AI tools</span>
         
-        <span class="kw">Asia</span>
+        <span class="kw">privacy</span>
         
       </div>
       
@@ -443,28 +414,86 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Policy</span>
-        <span class="source">Hacker News</span>
-        <span class="score mid">
-          7/10
+        <span class="badge">Industry</span>
+        <span class="source">TechCrunch</span>
+        <span class="score high">
+          8/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://github.com/bikini/exploitarium" target="_blank" rel="noopener">Anonymous GitHub account mass-dropping undisclosed 0-days</a>
+        <a href="https://techcrunch.com/2026/06/30/the-deepmind-trio-who-built-a-poker-ai-are-now-making-money-for-quant-hedge-funds/" target="_blank" rel="noopener">The DeepMind trio who built a poker AI are now making money for quant hedge funds</a>
       </p>
       
-      <p class="card-summary">An anonymous GitHub account is publicly releasing previously undisclosed zero-day vulnerabilities without prior notification to affected vendors or developers. This practice, known as 'dropping' zero-days, poses significant security risks as it exposes systems to potential exploitation before patches can be developed. The activity has drawn attention from the security community due to the volume and undisclosed nature of the releases.</p>
+      <p class="card-summary">EquiLibre Technologies, founded by three former DeepMind researchers who previously built a poker-playing AI, has reached a valuation of over $500 million. The Prague-based AI lab is now applying its game-theory and decision-making expertise to generate returns for quantitative hedge funds. The company represents a growing trend of academic and research AI talent transitioning into high-value financial applications.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">zero-day</span>
+        <span class="kw">DeepMind</span>
         
-        <span class="kw">cybersecurity</span>
+        <span class="kw">quant finance</span>
         
-        <span class="kw">vulnerability disclosure</span>
+        <span class="kw">AI startup</span>
         
-        <span class="kw">GitHub</span>
+        <span class="kw">hedge funds</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Industry</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Claude Sonnet 5</a>
+      </p>
+      
+      <p class="card-summary">Anthropic has released Claude Sonnet 5, the latest iteration of its mid-tier AI model. The Hacker News thread discusses community reactions to the model's capabilities, performance, and positioning relative to competitors. As a product launch, it signals Anthropic's continued cadence of model updates within its Claude model family.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">Claude</span>
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">model release</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/eee-community-evals" target="_blank" rel="noopener">Featuring Every Eval Ever Results on Hugging Face Model Pages</a>
+      </p>
+      
+      <p class="card-summary">Hugging Face has introduced a feature that displays evaluation results directly on model pages, making it easier to compare model performance at a glance. This update aggregates benchmark and evaluation metrics in one centralized location, reducing the need to search across separate sources. The change aims to improve transparency and streamline the model selection process for practitioners.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Hugging Face</span>
+        
+        <span class="kw">model evaluation</span>
+        
+        <span class="kw">benchmarks</span>
+        
+        <span class="kw">LLM</span>
         
       </div>
       
@@ -494,35 +523,6 @@
         <span class="kw">cybersecurity</span>
         
         <span class="kw">China AI</span>
-        
-        <span class="kw">benchmarks</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Infrastructure</span>
-        <span class="source">Hacker News</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://chipsandcheese.com/p/top500-at-isc26-we-have-a-new-number" target="_blank" rel="noopener">TOP500 at ISC’26: We have a New Number 1 Supercomputer</a>
-      </p>
-      
-      <p class="card-summary">The TOP500 list, released at ISC'26, has crowned a new number one supercomputer, displacing the previous leader in global high-performance computing rankings. The TOP500 list is a biannual benchmark ranking of the world's most powerful supercomputers based on the LINPACK benchmark. This shift signals continued investment and advancement in supercomputing infrastructure globally.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">supercomputing</span>
-        
-        <span class="kw">HPC</span>
-        
-        <span class="kw">TOP500</span>
         
         <span class="kw">benchmarks</span>
         
