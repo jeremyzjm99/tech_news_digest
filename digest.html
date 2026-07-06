@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — July 05, 2026</title>
+  <title>AI & Tech Digest — July 06, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">July 05, 2026</span>
+  <span class="topbar-date">July 06, 2026</span>
 </div>
 
 <nav>
@@ -223,41 +223,12 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest sits at a fascinating intersection of AI's growing role in human development and the slow unraveling of the systems it's replacing. A new study out of Dartmouth shows AI tutors delivering effect sizes that would make most educational interventions blush — just as reports surface that wealthy families are quietly outsourcing their children's education to the same technology, raising pointed questions about who benefits first. Meanwhile, Amazon is quietly shutting the door on new Mechanical Turk customers, a symbolic bookend to the era of human-powered micro-labor that once trained the very models now displacing it. On the cultural and commercial side, Google's AI ad is drawing eye-rolls for putting words in the Founding Fathers' mouths, Bending Spoons is stepping into the spotlight after years of quietly acquiring digital properties, and prediction markets are now letting you wager on whether a wildfire will reach your doorstep — a development that is either brilliant risk-signal aggregation or a deeply unsettling new normal, depending on your priors.</p>
+  <p>Today's digest spans the full arc of modern AI development, from the infrastructure beneath our feet to the products reshaping how we work. HuggingFace is on a roll with major releases — LeRobot v0.6.0 brings a compelling "imagine, evaluate, improve" loop to robotics, kernel optimizations are getting a significant overhaul, and a peek behind the curtain at their data strategy rounds out a busy day from the Hugging Face team. On the research and architecture front, there's fascinating work on pruning RAG context to only what's strictly necessary for an answer, and a thought-provoking exploration of global workspace theory applied to language models — both worth a careful read if you care about efficiency and interpretability. The industry side carries a harder edge: Vercel's CEO is making the case for cleanly separating model layers from agent layers, AI-attributed layoffs continue to mount in 2026, and a timely reminder that your Google searches are quietly feeding the machine — with instructions on how to push back. Rounding things out, Apple is giving Siri a personality dial in the iOS 27 beta, and a delightfully off-topic Hacker News thread asks how little exercise you can actually get away with — a question your GPU cluster will never have to worry about.</p>
 </div>
 
 <main>
   <p class="label" style="margin-bottom:1rem">Top Stories</p>
   <div class="grid">
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Tools</span>
-        <span class="source">Hacker News</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://github.com/jamesob/local-llm" target="_blank" rel="noopener">Jamesob's guide to running SOTA LLMs locally</a>
-      </p>
-      
-      <p class="card-summary">A Hacker News post by user 'jamesob' provides a practical guide for running state-of-the-art large language models locally on personal hardware. The guide likely covers setup, tooling, and hardware considerations for self-hosting LLMs without relying on cloud APIs. The accompanying comments section suggests community discussion around tips, performance trade-offs, and recommended models.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">LLM</span>
-        
-        <span class="kw">local inference</span>
-        
-        <span class="kw">open-source</span>
-        
-        <span class="kw">self-hosting</span>
-        
-      </div>
-      
-    </div>
     
     <div class="card">
       <div class="card-meta">
@@ -283,6 +254,124 @@
         <span class="kw">AI infrastructure</span>
         
         <span class="kw">model capabilities</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/lerobot-release-v060" target="_blank" rel="noopener">LeRobot v0.6.0: Imagine, Evaluate, Improve</a>
+      </p>
+      
+      <p class="card-summary">HuggingFace released LeRobot v0.6.0, an update to its open-source robotics framework. The release focuses on new capabilities around imagination, evaluation, and iterative improvement for robotic learning systems. No article body was provided, so a full summary cannot be completed.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">HuggingFace</span>
+        
+        <span class="kw">LeRobot</span>
+        
+        <span class="kw">robotics</span>
+        
+        <span class="kw">open-source</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.kapa.ai/blog/how-we-prune-rag-context" target="_blank" rel="noopener">Pruning RAG context down to what the answer actually needs</a>
+      </p>
+      
+      <p class="card-summary">This article discusses techniques for trimming down the context passed to large language models in Retrieval-Augmented Generation (RAG) pipelines, keeping only the portions that are directly relevant to answering a query. The goal is to reduce noise, lower token costs, and improve response accuracy by feeding models leaner, more targeted context. This approach addresses a common pain point in RAG systems where irrelevant retrieved text can degrade model performance.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">RAG</span>
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">context pruning</span>
+        
+        <span class="kw">retrieval</span>
+        
+        <span class="kw">NLP</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.anthropic.com/research/global-workspace" target="_blank" rel="noopener">A global workspace in language models</a>
+      </p>
+      
+      <p class="card-summary">A research paper explores whether large language models exhibit behavior analogous to the 'Global Workspace Theory' from cognitive neuroscience, which posits that the brain has a central hub for broadcasting information across specialized modules. The study investigates whether LLMs have emergent, centralized information-sharing mechanisms similar to human consciousness frameworks. The findings have implications for understanding how information flows and integrates within transformer-based architectures.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">interpretability</span>
+        
+        <span class="kw">transformers</span>
+        
+        <span class="kw">cognitive architecture</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/revamped-kernels" target="_blank" rel="noopener">🤗 Kernels: Major Updates</a>
+      </p>
+      
+      <p class="card-summary">No article content was provided beyond the title, so a full summary cannot be generated. Based on the title alone, Hugging Face appears to have released significant updates to its Kernels product, which is likely related to optimized compute or GPU kernel operations for machine learning workflows.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Hugging Face</span>
+        
+        <span class="kw">Kernels</span>
+        
+        <span class="kw">MLOps</span>
+        
+        <span class="kw">open-source</span>
         
       </div>
       
@@ -381,117 +470,30 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Consumer</span>
+        <span class="badge">Industry</span>
         <span class="source">TechCrunch</span>
         <span class="score mid">
-          6/10
+          7/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/" target="_blank" rel="noopener">The only AI glossary you’ll need this year</a>
+        <a href="https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/" target="_blank" rel="noopener">Vercel CEO Guillermo Rauch on the fight to split off models from agents</a>
       </p>
       
-      <p class="card-summary">TechCrunch has published a comprehensive AI glossary to help readers navigate the growing volume of terminology emerging from the AI industry. The resource aims to define key words and phrases that professionals and general audiences are increasingly encountering. It serves as a reference guide as AI concepts continue to proliferate across technical and mainstream conversations.</p>
+      <p class="card-summary">Vercel CEO Guillermo Rauch discusses the emerging trend of separating AI models from agents in production environments, emphasizing that cost and performance trade-offs become critical at scale. As companies move from experimentation to production, they increasingly evaluate which models to use based on price-to-performance ratios rather than defaulting to a single provider. This signals a maturing AI infrastructure market where flexibility and efficiency are prioritized over convenience.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">AI terminology</span>
-        
-        <span class="kw">glossary</span>
+        <span class="kw">agents</span>
         
         <span class="kw">LLM</span>
-        
-        <span class="kw">machine learning</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">Wired</span>
-        <span class="score mid">
-          6/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.wired.com/story/google-deepmind-unionization-talks-are-off-to-a-rocky-start/" target="_blank" rel="noopener">Google DeepMind Unionization Talks Are Off to a Rocky Start</a>
-      </p>
-      
-      <p class="card-summary">Unionization efforts at Google DeepMind are facing early resistance, with employees expressing frustration that executives are not engaging seriously with their organizing efforts. Negotiations held on Wednesday highlighted a significant gap between worker expectations and management's willingness to participate in the process. The situation reflects broader tensions around labor organizing within the AI industry.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Google DeepMind</span>
-        
-        <span class="kw">unionization</span>
-        
-        <span class="kw">labor</span>
-        
-        <span class="kw">AI workforce</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Consumer</span>
-        <span class="source">Wired</span>
-        <span class="score mid">
-          6/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.wired.com/story/we-are-in-the-knockout-round-of-price-increases-for-consumer-electronics/" target="_blank" rel="noopener">All Your Favorite Gadgets Are Getting Way More Expensive … Again</a>
-      </p>
-      
-      <p class="card-summary">An AI-driven surge in chip demand is contributing to a significant shortage of semiconductors, pushing up prices for consumer electronics including smartphones, computers, and gaming consoles. The cost increases are ongoing and show no signs of stabilizing in the near term. Both manufacturers and consumers are feeling the financial pressure as supply struggles to keep pace with AI infrastructure and device demand.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">chip shortage</span>
-        
-        <span class="kw">AI hardware</span>
         
         <span class="kw">pricing</span>
         
-        <span class="kw">semiconductors</span>
+        <span class="kw">production</span>
         
-        <span class="kw">consumer electronics</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Policy</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          6/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/" target="_blank" rel="noopener">Midjourney wants Hollywood studios to reveal the details of their AI usage</a>
-      </p>
-      
-      <p class="card-summary">Midjourney is involved in a legal dispute with three Hollywood studios and is seeking to force those studios to disclose details about their own internal AI usage. The move appears to be a strategic legal maneuver, potentially to establish context around how AI is broadly used in the entertainment industry. The outcome could have implications for how AI adoption is disclosed and scrutinized in litigation.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Midjourney</span>
-        
-        <span class="kw">generative AI</span>
-        
-        <span class="kw">copyright</span>
-        
-        <span class="kw">legal</span>
+        <span class="kw">Vercel</span>
         
       </div>
       
@@ -502,27 +504,25 @@
         <span class="badge">Industry</span>
         <span class="source">TechCrunch</span>
         <span class="score mid">
-          6/10
+          7/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/" target="_blank" rel="noopener">What is Mistral AI? Everything to know about the OpenAI competitor</a>
+        <a href="https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/" target="_blank" rel="noopener">Every major tech layoff in 2026 that has name-checked AI</a>
       </p>
       
-      <p class="card-summary">Mistral AI is a French AI company founded in 2023 that develops and offers open-source large language models, positioning itself as a competitor to OpenAI. The company has secured substantial funding and is focused on making cutting-edge AI models broadly accessible. Its open-source approach distinguishes it from many proprietary AI providers in the current market.</p>
+      <p class="card-summary">Major tech companies throughout 2026 have been conducting significant layoffs, frequently citing AI-driven efficiency gains and automation as contributing factors. This trend reflects a broader industry shift where organizations are restructuring their workforces as AI tools reduce the need for certain roles. The article tracks these layoffs in reverse chronological order, highlighting the growing pattern of AI being used as justification for workforce reductions.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">Mistral AI</span>
+        <span class="kw">layoffs</span>
         
-        <span class="kw">open-source</span>
+        <span class="kw">AI automation</span>
         
-        <span class="kw">LLM</span>
+        <span class="kw">tech industry</span>
         
-        <span class="kw">OpenAI</span>
-        
-        <span class="kw">funding</span>
+        <span class="kw">workforce restructuring</span>
         
       </div>
       
