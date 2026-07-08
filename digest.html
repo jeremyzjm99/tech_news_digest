@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — July 07, 2026</title>
+  <title>AI & Tech Digest — July 08, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">July 07, 2026</span>
+  <span class="topbar-date">July 08, 2026</span>
 </div>
 
 <nav>
@@ -223,12 +223,41 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is buzzing with a trifecta of big themes: Meta's aggressive AI expansion, the open source vs. proprietary tension reshaping the industry, and the accelerating race to make AI infrastructure more accessible. Meta is making waves with its new Muse image generation model, which controversially allows AI to pull real Instagram users into generated photos — and opts you *in* by default, raising immediate privacy alarms. On the infrastructure front, Hugging Face is cementing its position as the connective tissue of the ML ecosystem, announcing zero-egress cloud storage via SkyPilot, one-click SageMaker Studio integration, and managed compute on Foundry — a trifecta of moves that make model deployment significantly more frictionless. Meanwhile, the cost-efficiency narrative continues to gain momentum as Microsoft doubles down on its own in-house models to trim expenses, while Anthropic shrugs off open source pressure — for now — and launches a mobile-friendly version of its Claude coding agent. Rounding things out, Discord serves as a cautionary tale on AI moderation at scale, after a bug in its automated systems wrongfully banned users over completely benign images.</p>
+  <p>Today's digest spans the full arc of AI infrastructure, capability, and consequence. On the model and tooling front, HuggingFace drops a native-speed vLLM transformers backend alongside a deep dive into data pipelines for agentic systems, while xAI's Grok 4.5 raises the competitive bar yet again and a sharp piece on coding benchmarks challenges whether our evaluation frameworks are measuring signal or just rewarding overfitting. Meanwhile, the real-world implications of always-on AI continue to sharpen: Meta is reportedly developing smart glasses that record continuously, Google's deepfake detection tooling was put to work debunking a fabricated McConnell image, and a *Wired* feature walks through building a self-improving AI system — raising questions that go well beyond the tutorial. Rounding things out, QuantumDiamonds snags EU backing to accelerate chip manufacturing with quantum sensing tech, Chatto goes open source, and in today's obligatory "wait, what?" entry — someone decoded the obfuscated bash script printed on a Uniqlo t-shirt.</p>
 </div>
 
 <main>
   <p class="label" style="margin-bottom:1rem">Top Stories</p>
   <div class="grid">
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          9/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/native-speed-vllm-transformers-backend" target="_blank" rel="noopener">Native-speed vLLM transformers modeling backend</a>
+      </p>
+      
+      <p class="card-summary">HuggingFace has introduced a native-speed vLLM transformers modeling backend, enabling faster and more efficient large language model inference. This integration allows developers to leverage vLLM's high-performance serving capabilities directly within the HuggingFace transformers ecosystem. The update aims to streamline deployment workflows and improve throughput for production LLM applications.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">vLLM</span>
+        
+        <span class="kw">HuggingFace</span>
+        
+        <span class="kw">LLM inference</span>
+        
+        <span class="kw">transformers</span>
+        
+      </div>
+      
+    </div>
     
     <div class="card">
       <div class="card-meta">
@@ -412,28 +441,57 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Research</span>
+        <span class="badge">Industry</span>
         <span class="source">Hacker News</span>
-        <span class="score mid">
-          7/10
+        <span class="score high">
+          8/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://intextbooks.science.uu.nl/workshop2026/files/itb26_s1s2.pdf" target="_blank" rel="noopener">New AI tutor achieves 0.71-1.30 SD effect size in Dartmouth course [pdf]</a>
+        <a href="https://x.ai/news/grok-4-5" target="_blank" rel="noopener">Grok 4.5</a>
       </p>
       
-      <p class="card-summary">An AI tutoring system deployed in a Dartmouth course demonstrated strong learning outcomes, achieving an effect size of 0.71 to 1.30 standard deviations compared to traditional instruction. This places it among the most effective educational interventions ever measured, suggesting AI tutors can meaningfully outperform conventional teaching methods. The findings add to growing evidence that LLM-based personalized learning tools may have significant practical value in higher education.</p>
+      <p class="card-summary">xAI has released Grok 4.5, the latest iteration of its large language model. The Hacker News discussion thread suggests community interest in its capabilities and positioning relative to competing models. This release continues xAI's efforts to compete in the rapidly evolving frontier AI model space.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">AI tutor</span>
+        <span class="kw">xAI</span>
+        
+        <span class="kw">Grok</span>
         
         <span class="kw">LLM</span>
         
-        <span class="kw">education</span>
+        <span class="kw">model release</span>
         
-        <span class="kw">benchmarks</span>
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/nvidia/open-data-for-agents" target="_blank" rel="noopener">Data for Agents</a>
+      </p>
+      
+      <p class="card-summary">The article title 'Data for Agents' from HuggingFace suggests content related to how data is collected, structured, or used to train and power AI agents, though no body text was provided to summarize in detail. HuggingFace is known for publishing resources on datasets, model training, and agentic AI workflows. Without the full article content, a complete summary cannot be generated.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">HuggingFace</span>
+        
+        <span class="kw">agents</span>
+        
+        <span class="kw">datasets</span>
+        
+        <span class="kw">LLM</span>
         
       </div>
       
@@ -465,66 +523,6 @@
         <span class="kw">production</span>
         
         <span class="kw">Vercel</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/" target="_blank" rel="noopener">Every major tech layoff in 2026 that has name-checked AI</a>
-      </p>
-      
-      <p class="card-summary">Major tech companies throughout 2026 have been conducting significant layoffs, frequently citing AI-driven efficiency gains and automation as contributing factors. This trend reflects a broader industry shift where organizations are restructuring their workforces as AI tools reduce the need for certain roles. The article tracks these layoffs in reverse chronological order, highlighting the growing pattern of AI being used as justification for workforce reductions.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">layoffs</span>
-        
-        <span class="kw">AI automation</span>
-        
-        <span class="kw">tech industry</span>
-        
-        <span class="kw">workforce restructuring</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Policy</span>
-        <span class="source">Wired</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/" target="_blank" rel="noopener">Meta Now Lets Anyone Use Your Instagram Photos in AI Images—Unless You Opt Out</a>
-      </p>
-      
-      <p class="card-summary">Meta has rolled out its Muse image generation model, which by default uses public Instagram photos to generate AI images — meaning users must actively opt out to prevent their content from being used. This opt-out requirement places the burden on creators rather than requiring explicit consent. The policy raises significant concerns around data rights, consent, and how user-generated content is leveraged to train and power commercial AI systems.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Meta</span>
-        
-        <span class="kw">generative AI</span>
-        
-        <span class="kw">data privacy</span>
-        
-        <span class="kw">opt-out</span>
-        
-        <span class="kw">image generation</span>
         
       </div>
       
