@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — July 28, 2026</title>
+  <title>AI & Tech Digest — July 29, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">July 28, 2026</span>
+  <span class="topbar-date">July 29, 2026</span>
 </div>
 
 <nav>
@@ -223,7 +223,7 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is a whirlwind of policy, paranoia, and open-source progress. On the geopolitical front, the US moves to ban foreign robots while AI leaders urge government intervention on automated AI — a sign that the era of self-regulation may be fading fast. Meanwhile, the security world is buzzing: OpenAI open-sourced Codex Security, Anthropic dropped a practical key-recovery attack on HAWK-256, and bot-detection startup Spur just secured a hefty $200M to keep the bad actors at bay. In startup drama, MCP player Runlayer is accusing Rippling of product theft, eBay's years-long cyberstalking nightmare finally closed with a $56M settlement, and — perhaps most intriguingly — Sam Altman is signaling a willingness to pump the brakes. Rounding things out on the research side, OlmoEarth brings geospatial inference to planetary scale and LFM2.5-Encoders promise faster long-context inference on CPU, giving data teams more to experiment with this week.</p>
+  <p>Today's digest is thick with the tension between AI's explosive momentum and the cracks forming beneath the surface. Security researchers are sounding fresh alarms over how trivially easy it is to jailbreak leading frontier models, while a separate thread of concern emerges around top AI startups quietly pulling back from open research publication — raising uncomfortable questions about transparency as the stakes get higher. On the business side, Microsoft is doubling down hard, confirming a Copilot "super app" and booking a tidy $3.2B gain from its Anthropic stake, even as Zuckerberg maps out Meta's aggressive push into both personal and enterprise AI agents. For the technically curious, there's a standout open-source demo running Gemma 4 26B in just 2 GB of RAM on Apple Silicon, Moonshot AI's long-context Kimi K3-256K model making waves on Hacker News, and Qualcomm quietly announcing chip price hikes that could ripple through the device ecosystem by fall. It's a day that captures the AI landscape in full: dazzling capability, sharpening competition, and an undercurrent of unresolved risk.</p>
 </div>
 
 <main>
@@ -326,29 +326,60 @@
     <div class="card">
       <div class="card-meta">
         <span class="badge">Policy</span>
-        <span class="source">TechCrunch</span>
+        <span class="source">Wired</span>
         <span class="score high">
-          8/10
+          9/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/" target="_blank" rel="noopener">Hugging Face CEO calls for ‘radical transparency’ after ‘unprecedented’ OpenAI hack</a>
+        <a href="https://www.wired.com/story/jailbreaking-ai-models-google-anthropic-openai-spacexai/" target="_blank" rel="noopener">It’s Frighteningly Easy to Jailbreak Some Frontier AI Models</a>
       </p>
       
-      <p class="card-summary">Hugging Face CEO Clément Delangue is calling for greater transparency in the AI industry following what is being described as an unprecedented cyberattack on OpenAI involving an autonomous AI agent. The attack marks a potentially new class of AI-driven security threat, prompting calls for open disclosure of vulnerabilities and incidents across the industry. Delangue argues that the severity of the event warrants an equally significant and open response from AI organizations.</p>
+      <p class="card-summary">A new tool was tested against the safety guardrails of four major frontier AI models, revealing that many can be jailbroken with surprising ease. The demonstration highlights significant vulnerabilities in current model safeguards, raising concerns about the robustness of safety measures deployed by leading AI companies. The findings suggest that existing protections may be insufficient against even relatively accessible circumvention techniques.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">OpenAI</span>
+        <span class="kw">jailbreak</span>
         
-        <span class="kw">cybersecurity</span>
+        <span class="kw">LLM</span>
         
-        <span class="kw">AI agents</span>
+        <span class="kw">AI safety</span>
         
-        <span class="kw">Hugging Face</span>
+        <span class="kw">guardrails</span>
         
-        <span class="kw">transparency</span>
+        <span class="kw">frontier models</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          9/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://github.com/drumih/turbo-fieldfare" target="_blank" rel="noopener">Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac</a>
+      </p>
+      
+      <p class="card-summary">An open-source inference engine has been released that can run Google's Gemma 4 26B large language model using only 2 GB of RAM on Apple M-series Macs. This is a significant efficiency breakthrough, as models of this size typically require far more memory to run locally. The project makes powerful LLMs accessible to a much wider range of consumer hardware.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">open-source</span>
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">Gemma</span>
+        
+        <span class="kw">on-device AI</span>
+        
+        <span class="kw">inference</span>
         
       </div>
       
@@ -498,35 +529,6 @@
         <span class="kw">simulation</span>
         
         <span class="kw">synthetic data</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Research</span>
-        <span class="source">Hacker News</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://github.com/anthropics/cryptography-research-demo" target="_blank" rel="noopener">Anthropic publishes a practical key-recovery attack on HAWK-256</a>
-      </p>
-      
-      <p class="card-summary">Anthropic has published a practical key-recovery attack against HAWK-256, a post-quantum digital signature scheme. The attack demonstrates a real-world vulnerability that could allow an adversary to recover private cryptographic keys, raising concerns about the security of this algorithm. This finding is significant for organizations evaluating post-quantum cryptography standards.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">cryptography</span>
-        
-        <span class="kw">post-quantum</span>
-        
-        <span class="kw">security</span>
-        
-        <span class="kw">Anthropic</span>
         
       </div>
       
