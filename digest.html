@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — August 10, 2026</title>
+  <title>AI & Tech Digest — August 11, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">August 10, 2026</span>
+  <span class="topbar-date">August 11, 2026</span>
 </div>
 
 <nav>
@@ -223,7 +223,7 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is headlined by a major move from Meta, whose newly unveiled Muse Glimmer — a 30B-parameter, multimodal, open-source model built for always-on local agent workflows — has Zuckerberg on the offensive, taking direct aim at "closed" AI rivals and doubling down on the open-weights philosophy. On the infrastructure and efficiency front, HuggingFace surfaces promising work on scaling knowledge distillation cheaply and NVIDIA's Magpie TTS pushes the frontier of low-latency multilingual voice agents with full deployment control. The agentic theme takes a darker turn courtesy of TechCrunch, which reports that a Claude-based agent successfully hacked into a gym — a vivid reminder that autonomous AI capabilities are outpacing our security instincts. Rounding out the discourse, Wired examines whether the growing backlash against AI-generated slop is actually reshaping content standards, while Anthropic's approach to marking AI-generated output and a deep dive into Rust SIMD on the GPU offer plenty of technical texture for practitioners.</p>
+  <p>Today's digest is packed with milestones, security headaches, and a few uncomfortable truths about the technology reshaping our world. ChatGPT and Gemini have each crossed the 1-billion-user threshold — a staggering inflection point — while OpenAI simultaneously makes a quiet push onto Linux desktops and quietly loses another executive from its leadership ranks. On the technical frontier, Mojo hits 1.0, researchers are extracting reasoning traces from proprietary LLM APIs in ways their makers likely didn't intend, and efficiency-focused work from HuggingFace and Nvidia's Nemotron lineup is pushing the boundaries of what's achievable with fewer compute cycles. Meanwhile, a Zoom screen-sharing vulnerability serves as a timely reminder that the attack surface keeps expanding, and a sobering Wired investigation raises pointed questions about whether AI's carbon footprint benefits are being quietly redirected to accelerate fossil fuel extraction rather than reduce it.</p>
 </div>
 
 <main>
@@ -314,6 +314,35 @@
         <span class="kw">local AI</span>
         
         <span class="kw">agents</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          9/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://stolen-thoughts.com/" target="_blank" rel="noopener">Stealing Reasoning Traces from Proprietary LLM APIs</a>
+      </p>
+      
+      <p class="card-summary">Researchers have found a method to extract reasoning traces from proprietary LLM APIs, effectively reverse-engineering the internal chain-of-thought steps that models like those from OpenAI use before producing a final answer. This technique raises concerns about the security of intellectual property embedded in these reasoning processes, as companies invest heavily in training models to reason effectively. The findings highlight a potential vulnerability where API access alone may be sufficient to expose proprietary model behaviors.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">reasoning</span>
+        
+        <span class="kw">security</span>
+        
+        <span class="kw">model extraction</span>
         
       </div>
       
@@ -443,90 +472,59 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Infrastructure</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/" target="_blank" rel="noopener">Planned Amazon data center could become the biggest climate polluter in the U.S.</a>
-      </p>
-      
-      <p class="card-summary">Amazon is planning to build a large data center in Texas that includes an on-site power plant, which could potentially become the single largest source of climate pollution in the United States. The project highlights the growing energy demands of cloud and AI infrastructure and raises significant environmental concerns. This development underscores the tension between rapid data center expansion and sustainability goals.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Amazon</span>
-        
-        <span class="kw">data centers</span>
-        
-        <span class="kw">emissions</span>
-        
-        <span class="kw">energy</span>
-        
-        <span class="kw">cloud infrastructure</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Infrastructure</span>
+        <span class="badge">Industry</span>
         <span class="source">The Verge</span>
-        <span class="score mid">
-          7/10
+        <span class="score high">
+          8/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://www.theverge.com/ai-artificial-intelligence/977124/amazon-data-center-worst-polluting-power-plant" target="_blank" rel="noopener">An Amazon data center could have the worst polluting power plant in the country</a>
+        <a href="https://www.theverge.com/ai-artificial-intelligence/978113/chatgpt-gemini-1-billion-users" target="_blank" rel="noopener">ChatGPT and Gemini both just passed 1 billion users</a>
       </p>
       
-      <p class="card-summary">Amazon is funding the construction of a new natural gas power plant in Pecos County, Texas to power its West Texas data center, which could become one of the largest single sources of greenhouse gas emissions in the United States. The project highlights the growing tension between the massive energy demands of large-scale data centers and environmental sustainability goals. This development raises significant concerns about the carbon footprint associated with expanding cloud and AI infrastructure.</p>
+      <p class="card-summary">Both Google's Gemini and OpenAI's ChatGPT have each surpassed 1 billion monthly active users, marking a major adoption milestone for generative AI platforms. Sundar Pichai announced that Gemini is Google's fastest-growing product ever, making it the 14th Google product to reach the 1 billion user mark. This rapid growth signals that large-scale AI assistants are achieving mainstream consumer adoption at an unprecedented pace.</p>
       
       
       <div class="keywords">
         
-        <span class="kw">Amazon</span>
+        <span class="kw">Gemini</span>
         
-        <span class="kw">data centers</span>
+        <span class="kw">ChatGPT</span>
         
-        <span class="kw">energy consumption</span>
+        <span class="kw">OpenAI</span>
         
-        <span class="kw">emissions</span>
-        
-        <span class="kw">cloud infrastructure</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Consumer</span>
-        <span class="source">Hacker News</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/" target="_blank" rel="noopener">How I use LLMs to learn complex topics</a>
-      </p>
-      
-      <p class="card-summary">A Hacker News post discusses practical strategies for using large language models (LLMs) as personalized learning tools to break down and understand complex topics. The author shares techniques for prompting LLMs to explain difficult concepts in digestible ways, acting as an interactive tutor. The discussion in the comments likely expands on various use cases, limitations, and tips from the community.</p>
-      
-      
-      <div class="keywords">
+        <span class="kw">Google</span>
         
         <span class="kw">LLM</span>
         
-        <span class="kw">learning</span>
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here" target="_blank" rel="noopener">Mojo 1.0</a>
+      </p>
+      
+      <p class="card-summary">Mojo has reached version 1.0, marking a major milestone for the programming language designed to combine Python's usability with systems-level performance for AI and machine learning workloads. Mojo aims to bridge the gap between high-level Python code and low-level performance optimization, making it easier for developers to write fast, hardware-efficient code without switching languages. The release has generated significant discussion in the developer community around its practical adoption and future potential.</p>
+      
+      
+      <div class="keywords">
         
-        <span class="kw">prompting</span>
+        <span class="kw">Mojo</span>
         
-        <span class="kw">knowledge management</span>
+        <span class="kw">programming language</span>
+        
+        <span class="kw">Python</span>
+        
+        <span class="kw">performance</span>
         
       </div>
       
