@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — August 13, 2026</title>
+  <title>AI & Tech Digest — August 14, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">August 13, 2026</span>
+  <span class="topbar-date">August 14, 2026</span>
 </div>
 
 <nav>
@@ -223,41 +223,12 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is packed with signals across the full AI stack, from research reproducibility to model releases to the ever-present tension between hype and substance. HuggingFace dropped a sobering deep-dive into reproducing 2,200 ICML papers — a must-read for anyone who builds on published research — while the model release cadence continues unabated with Gemini 3.7 Flash, Mistral OCR 4.1, and accelerated GPT-5.6 Sol Ultrafast all landing in the same news cycle. On the business side, Databricks' jaw-dropping $5B raise at a $190B valuation underscores just how much capital is still chasing AI infrastructure, even as Writer quietly focuses on the less glamorous but very real problem of token cost efficiency. And if you're in the mood for some skepticism to balance the euphoria, Wired's takedown of Zuckerberg's 6,500-word AI manifesto serves as a useful reminder that volume of words and clarity of vision are not the same thing.</p>
+  <p>Today's digest is brimming with the kind of productive tension that defines this moment in tech: open models are quietly closing the gap on frontier labs, Qwen 3.8 27B is turning heads on Hacker News, and HuggingFace's summer 2026 roundup gives us a useful snapshot of just how fast the open-weight landscape is shifting. Meanwhile, the euphoria police are out in force — Joshua Kushner is calling out Silicon Valley's AI hype cycle, a Wired interview challenges whether big labs even understand user needs, and practitioners are openly asking why Anthropic's Opus 5 feels like a step backward to work with. On the physical world front, self-driving trucks are now a legal reality on California highways, a four-foot-tall Chinese robot is angling for influencer status, and Iranian threat actors are allegedly probing U.S. water utility infrastructure — a sobering reminder that the attack surface keeps expanding. Rounding things out, New York City lawmakers are pushing back on facial recognition at MSG, and Google is reserving its flashiest new camera trick for Pixel 11 owners only.</p>
 </div>
 
 <main>
   <p class="label" style="margin-bottom:1rem">Top Stories</p>
   <div class="grid">
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Research</span>
-        <span class="source">Hacker News</span>
-        <span class="score high">
-          9/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://stolen-thoughts.com/" target="_blank" rel="noopener">Stealing Reasoning Traces from Proprietary LLM APIs</a>
-      </p>
-      
-      <p class="card-summary">Researchers have found a method to extract reasoning traces from proprietary LLM APIs, effectively reverse-engineering the internal chain-of-thought steps that models like those from OpenAI use before producing a final answer. This technique raises concerns about the security of intellectual property embedded in these reasoning processes, as companies invest heavily in training models to reason effectively. The findings highlight a potential vulnerability where API access alone may be sufficient to expose proprietary model behaviors.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">LLM</span>
-        
-        <span class="kw">reasoning</span>
-        
-        <span class="kw">security</span>
-        
-        <span class="kw">model extraction</span>
-        
-      </div>
-      
-    </div>
     
     <div class="card">
       <div class="card-meta">
@@ -290,123 +261,16 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">The Verge</span>
+        <span class="badge">AI/ML</span>
+        <span class="source">HuggingFace</span>
         <span class="score high">
-          8/10
+          9/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://www.theverge.com/ai-artificial-intelligence/978113/chatgpt-gemini-1-billion-users" target="_blank" rel="noopener">ChatGPT and Gemini both just passed 1 billion users</a>
+        <a href="https://huggingface.co/blog/state-of-open-models-summer-2026" target="_blank" rel="noopener">State of Open Models: Summer 2026 Observations</a>
       </p>
       
-      <p class="card-summary">Both Google's Gemini and OpenAI's ChatGPT have each surpassed 1 billion monthly active users, marking a major adoption milestone for generative AI platforms. Sundar Pichai announced that Gemini is Google's fastest-growing product ever, making it the 14th Google product to reach the 1 billion user mark. This rapid growth signals that large-scale AI assistants are achieving mainstream consumer adoption at an unprecedented pace.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Gemini</span>
-        
-        <span class="kw">ChatGPT</span>
-        
-        <span class="kw">OpenAI</span>
-        
-        <span class="kw">Google</span>
-        
-        <span class="kw">LLM</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Tools</span>
-        <span class="source">Hacker News</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here" target="_blank" rel="noopener">Mojo 1.0</a>
-      </p>
-      
-      <p class="card-summary">Mojo has reached version 1.0, marking a major milestone for the programming language designed to combine Python's usability with systems-level performance for AI and machine learning workloads. Mojo aims to bridge the gap between high-level Python code and low-level performance optimization, making it easier for developers to write fast, hardware-efficient code without switching languages. The release has generated significant discussion in the developer community around its practical adoption and future potential.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Mojo</span>
-        
-        <span class="kw">programming language</span>
-        
-        <span class="kw">Python</span>
-        
-        <span class="kw">performance</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Research</span>
-        <span class="source">Wired</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.wired.com/story/ai-could-help-fossil-fuel-companies-create-more-emissions/" target="_blank" rel="noopener">AI Could Help Fossil Fuel Companies Create More Emissions</a>
-      </p>
-      
-      <p class="card-summary">New research warns that AI's integration into the fossil fuel industry could boost operational efficiency in ways that increase carbon emissions by up to 5 percent — a figure that far exceeds the emissions generated by AI data centers themselves. The findings challenge the common framing of AI's environmental footprint as primarily a compute/energy problem, highlighting how productivity gains in high-emission industries may be the larger risk. This presents a complex tradeoff for data professionals building AI solutions for energy sector clients.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">AI emissions</span>
-        
-        <span class="kw">climate</span>
-        
-        <span class="kw">fossil fuels</span>
-        
-        <span class="kw">sustainability</span>
-        
-        <span class="kw">research</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Research</span>
-        <span class="source">Wired</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.wired.com/story/a-zoom-screen-sharing-bug-let-anyone-take-over-other-devices-on-a-call/" target="_blank" rel="noopener">A Zoom Screen-Sharing Bug Let Anyone Take Over Other Devices on a Call</a>
-      </p>
-      
-      <p class="card-summary">A security vulnerability in Zoom's screen-sharing feature allowed any call participant to take control of another user's device. Notably, the flaw was discovered by an AI tool in fewer than 20 prompts, highlighting the growing role of AI in automated vulnerability detection. Zoom has since patched the bug.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">cybersecurity</span>
-        
-        <span class="kw">Zoom</span>
-        
-        <span class="kw">AI</span>
-        
-        <span class="kw">vulnerability</span>
-        
-        <span class="kw">screen sharing</span>
-        
-      </div>
       
     </div>
     
@@ -525,6 +389,126 @@
         <span class="kw">pricing</span>
         
         <span class="kw">model release</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Tools</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop" target="_blank" rel="noopener">Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets</a>
+      </p>
+      
+      <p class="card-summary">Hugging Face has integrated Strands Agents, LeRobot, and Hugging Face Storage Buckets into a unified workflow, enabling users to record robot training data, train models, and deploy agents from a single platform. This end-to-end pipeline simplifies the development cycle for robotics and AI agent applications. The integration reduces the friction typically associated with managing separate tools for data collection, model training, and deployment.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Hugging Face</span>
+        
+        <span class="kw">robotics</span>
+        
+        <span class="kw">agents</span>
+        
+        <span class="kw">MLOps</span>
+        
+        <span class="kw">LeRobot</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">TechCrunch</span>
+        <span class="score mid">
+          7/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/" target="_blank" rel="noopener">Some Claude users are mad that Anthropic’s new watermarks will catch them cheating at their jobs, classes</a>
+      </p>
+      
+      <p class="card-summary">Anthropic has introduced a watermarking system for Claude that can detect AI-generated content, prompting backlash from users who were using the tool to pass off AI output as their own work in professional or academic settings. Critics took to social media to voice frustration, effectively revealing that their complaints stem from the watermarks exposing misuse. The controversy highlights ongoing tensions around AI transparency and accountability in workplaces and educational institutions.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">Claude</span>
+        
+        <span class="kw">watermarking</span>
+        
+        <span class="kw">AI detection</span>
+        
+        <span class="kw">LLM</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">Wired</span>
+        <span class="score mid">
+          7/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.wired.com/story/the-white-house-is-going-to-expand-its-ai-policy/" target="_blank" rel="noopener">The White House Is Going to Expand Its AI Policy</a>
+      </p>
+      
+      <p class="card-summary">The White House is preparing to update its AI policy framework to include open-source AI models, according to sources cited by Wired. This expansion reflects ongoing efforts by the administration to address a rapidly evolving technology landscape while navigating tension between regulation and innovation. The move signals growing recognition that open models present distinct policy considerations that current frameworks have not fully addressed.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">AI policy</span>
+        
+        <span class="kw">open-source</span>
+        
+        <span class="kw">regulation</span>
+        
+        <span class="kw">government</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">TechCrunch</span>
+        <span class="score mid">
+          7/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://techcrunch.com/2026/08/12/amazon-will-train-on-twitch-streamers-content-by-default-unless-they-opt-out/" target="_blank" rel="noopener">Amazon will train on Twitch streamers’ content by default, unless they opt out</a>
+      </p>
+      
+      <p class="card-summary">Amazon is defaulting Twitch streamers' content into AI training data, requiring creators to actively opt out if they don't want their content used. Twitch's Chief Product Officer openly acknowledged the opt-out design is intentional, admitting that an opt-in approach would yield virtually no participation. This raises concerns about consent and data ownership for the large creator community on the platform.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Amazon</span>
+        
+        <span class="kw">AI training data</span>
+        
+        <span class="kw">Twitch</span>
+        
+        <span class="kw">data consent</span>
         
       </div>
       
