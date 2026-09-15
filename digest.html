@@ -223,7 +223,7 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is dominated by a high-stakes tug-of-war over who controls the pace and infrastructure of the AI race. Pressure is mounting from multiple directions: AI leaders are publicly calling for a slowdown while Nvidia's Jensen Huang — who literally put Trump on speakerphone onstage — is making clear that the brakes aren't an option, raising fresh questions about whether any proposed "safety pact" among Big Tech is a principled pause or quiet collusion. On the infrastructure front, Cornelis Networks' $205M raise signals that challengers to Nvidia's hardware dominance are getting serious funding, and OpenAI's reported $300M acquisition of camera maker Glass Imaging hints at an aggressive push deeper into physical-world perception. Rounding things out, security teams should take note of the ClickFix social-engineering attacks now targeting both Mac and Windows users, while agentic tools like Pion — promising autonomous company operations — keep raising the question of just how fast "too fast" really is.</p>
+  <p>Today's digest finds the AI industry grappling with its own contradictions: Google pushes the frontier forward with Gemini 2.5 Live and Extended Thinking capabilities, while HuggingFace raises a sobering question about whether our agents can actually be trusted to perform consistently at scale — a critical concern for any team moving from prototype to production. Meta, meanwhile, is leaning into agentic workflows for WhatsApp Business automation, even as a counter-cultural backlash brews with the launch of ZuckOff, an app designed to detect Meta's smart glasses in the wild. The infrastructure powering all of this is increasingly hard to ignore: U.S. data centers are on track to consume more natural gas than Germany and Japan combined by 2035, and the communities absorbing these facilities are pushing back — politically and literally, as new reporting captures the human cost of the data center buildout colliding with already-scarred industrial towns. Rounding out today's reading: a sobering scroll through the AI graveyard of failed startups, a nuanced challenge to the social-media-harms-kids consensus, and an update on Wayback Machine access that's worth bookmarking for anyone who relies on it for research.</p>
 </div>
 
 <main>
@@ -354,6 +354,64 @@
     
     <div class="card">
       <div class="card-meta">
+        <span class="badge">Industry</span>
+        <span class="source">Hacker News</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" target="_blank" rel="noopener">Gemini 3.8 Live and 3.8 Live Extended Thinking</a>
+      </p>
+      
+      <p class="card-summary">Google has released Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, new versions of its AI model with real-time interaction capabilities and enhanced reasoning features. The Extended Thinking variant is designed to tackle more complex tasks by allowing the model additional processing time before responding. This release represents Google's continued push to compete in the rapidly evolving AI model landscape.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">Google</span>
+        
+        <span class="kw">Gemini</span>
+        
+        <span class="kw">LLM</span>
+        
+        <span class="kw">reasoning</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Research</span>
+        <span class="source">HuggingFace</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://huggingface.co/blog/ibm-research/altk-evolve-consistency" target="_blank" rel="noopener">Your Agent Aced the Task. Will It Do It Again?</a>
+      </p>
+      
+      <p class="card-summary">The article examines the reliability and reproducibility of AI agents, questioning whether strong performance on a task is consistent or a one-time result. It highlights challenges in evaluating agent behavior, since agents can succeed in one attempt but fail when run again under similar conditions. This raises important concerns for teams deploying agents in production environments where consistent, repeatable performance is critical.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">agents</span>
+        
+        <span class="kw">evaluation</span>
+        
+        <span class="kw">benchmarks</span>
+        
+        <span class="kw">reliability</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
         <span class="badge">Policy</span>
         <span class="source">The Verge</span>
         <span class="score mid">
@@ -465,66 +523,6 @@
         <span class="kw">Jensen Huang</span>
         
         <span class="kw">AI safety</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Policy</span>
-        <span class="source">The Verge</span>
-        <span class="score mid">
-          7/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.theverge.com/ai-artificial-intelligence/995141/ai-executives-politicians-safety-regulation-anthropic-dario-amodei" target="_blank" rel="noopener">What execs and politicians are saying about slowing down AI development</a>
-      </p>
-      
-      <p class="card-summary">Anthropic CEO Dario Amodei published an essay arguing that AI development should be slowed down, sparking a broader public debate among AI executives and politicians. The piece has prompted a wave of responses both supporting and opposing the idea of pacing AI progress in the interest of safety. The discussion reflects growing tension in the industry around how quickly frontier AI models should be developed and deployed.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">AI safety</span>
-        
-        <span class="kw">regulation</span>
-        
-        <span class="kw">Anthropic</span>
-        
-        <span class="kw">frontier AI</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">TechCrunch</span>
-        <span class="score mid">
-          6/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://techcrunch.com/2026/09/13/insight-partners-devin-parekh-on-why-the-firm-is-diversifying-while-everyone-else-bets-the-farm-on-openai-and-anthropic/" target="_blank" rel="noopener">Insight Partners’ Deven Parekh on why the firm is diversifying while everyone else bets the farm on OpenAI and Anthropic</a>
-      </p>
-      
-      <p class="card-summary">Insight Partners managing director Deven Parekh explains why the $90 billion firm is intentionally maintaining a diversified AI investment portfolio rather than concentrating heavily on OpenAI and Anthropic like many competitors. He discusses being comfortable holding stakes in competing AI labs and reflects on losing a deal for legal AI startup Legora to General Catalyst. The firm's strategy prioritizes broad exposure across the AI landscape over high-stakes bets on a small number of frontier model companies.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">venture capital</span>
-        
-        <span class="kw">AI investment</span>
-        
-        <span class="kw">OpenAI</span>
-        
-        <span class="kw">Anthropic</span>
-        
-        <span class="kw">portfolio strategy</span>
         
       </div>
       
