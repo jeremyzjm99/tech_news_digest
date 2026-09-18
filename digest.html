@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Tech Digest — September 17, 2026</title>
+  <title>AI & Tech Digest — September 18, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -213,7 +213,7 @@
 
 <div class="topbar">
   <span class="topbar-title">AI & Tech Digest</span>
-  <span class="topbar-date">September 17, 2026</span>
+  <span class="topbar-date">September 18, 2026</span>
 </div>
 
 <nav>
@@ -223,7 +223,7 @@
 
 <div class="overview">
   <p class="label">Today's Overview</p>
-  <p>Today's digest is dense with signals worth parsing: the AI infrastructure buildout shows no signs of deceleration, with Crusoe pulling in $3.9B for data centers and the FAA committing $875M to AI-driven air traffic modernization, even as sobering real-world consequences emerge from the Iranian strikes that permanently wiped customer data from Amazon's facilities. On the model and tooling front, Bonsai 2's near-lossless 9x compression and PrismML's tiny LLM push are reframing the efficiency-versus-scale debate, while Claude Code's relaunched Projects and Bend's proof-based language hint at a maturing focus on reliability and multi-agent orchestration. Meanwhile, the governance and market layers are getting complicated fast — Google DeepMind's new AGI institute is broadening the philosophical conversation just as Wired frames the AI antitrust landscape as an increasingly tangled mess. Taken together, today's stories sketch a field that is simultaneously scaling harder, compressing smarter, and reckoning — however unevenly — with the institutional and infrastructural weight of what it's building.</p>
+  <p>Today's digest reads like a stress test for the entire AI industry's relationship with reality, responsibility, and risk. From an AI hallucination that nearly triggered a US military operation to revelations that OpenAI and Microsoft knowingly set the web on a destructive "doom loop," the cracks in the foundation are getting harder to ignore — and Wired asks the uncomfortable question of whether the industry's own research should have prompted a pause already. On the governance front, Gavin Newsom is pushing for an AI kill switch while Wired explores how an AI slowdown could actually be enforced in practice, suggesting the policy conversation is finally catching up to the technical one. Meanwhile, in the labs, Anthropic is literally conducting biology experiments, OpenAI used its own LLMs to design custom silicon, and Claude Code quietly picked up a new file-handling behavior worth knowing about if you're in the agentic workflow space. Rounding things out, a Wired deep-dive exposes a Google analyst who went undercover to infiltrate a supply-chain hacking gang — a reminder that some of the most consequential security work still happens very much in the human layer.</p>
 </div>
 
 <main>
@@ -294,117 +294,28 @@
     
     <div class="card">
       <div class="card-meta">
-        <span class="badge">Infrastructure</span>
+        <span class="badge">Policy</span>
         <span class="source">TechCrunch</span>
         <span class="score high">
-          8/10
+          9/10
         </span>
       </div>
       <p class="card-title">
-        <a href="https://techcrunch.com/2026/09/14/ai-infrastructure-company-cornelis-raises-205m-to-chip-away-at-nvidias-dominance/" target="_blank" rel="noopener">AI infrastructure company Cornelis raises $205M to chip away at Nvidia’s dominance</a>
+        <a href="https://techcrunch.com/2026/09/18/ai-hallucination-nearly-triggers-us-military-operation/" target="_blank" rel="noopener">AI hallucination nearly triggers US military operation</a>
       </p>
       
-      <p class="card-summary">Cornelis Networks, an AI infrastructure startup, raised $205 million to compete with Nvidia in the GPU networking space. The company launched a product called Active Compute Fabric, a networking technology designed to reduce idle GPU time caused by data transfer bottlenecks. This funding signals growing investor interest in optimizing AI compute efficiency beyond just the chips themselves.</p>
+      <p class="card-summary">An AI language model reportedly generated false information that nearly prompted a U.S. military operation, highlighting the real-world risks of deploying LLMs in high-stakes decision-making contexts. The incident underscores concerns about AI hallucinations — where models confidently produce inaccurate outputs — and the critical need for human oversight when these systems are used in sensitive or consequential settings. Researchers are urging military personnel and policymakers to better understand the inherent uncertainty and reliability limitations of LLMs.</p>
       
       
       <div class="keywords">
-        
-        <span class="kw">GPU</span>
-        
-        <span class="kw">AI infrastructure</span>
-        
-        <span class="kw">networking</span>
-        
-        <span class="kw">funding</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Policy</span>
-        <span class="source">Wired</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://www.wired.com/story/ai-leaders-are-calling-for-a-slowdown-trumps-team-says-its-on-them/" target="_blank" rel="noopener">AI Leaders Are Calling for a Slowdown. Trump’s Team Says It’s on Them</a>
-      </p>
-      
-      <p class="card-summary">Anthropic CEO Dario Amodei publicly called for AI regulation over the weekend, drawing support from Sam Altman and Elon Musk. However, the Trump administration appears unwilling to impose federal oversight, instead signaling that responsibility for managing AI risks should fall on the companies themselves. This tension highlights a growing divide between some AI leaders seeking guardrails and a U.S. government favoring a hands-off approach.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">AI regulation</span>
-        
-        <span class="kw">AI safety</span>
-        
-        <span class="kw">Anthropic</span>
-        
-        <span class="kw">OpenAI</span>
-        
-        <span class="kw">policy</span>
-        
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Industry</span>
-        <span class="source">Hacker News</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" target="_blank" rel="noopener">Gemini 3.8 Live and 3.8 Live Extended Thinking</a>
-      </p>
-      
-      <p class="card-summary">Google has released Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, new versions of its AI model with real-time interaction capabilities and enhanced reasoning features. The Extended Thinking variant is designed to tackle more complex tasks by allowing the model additional processing time before responding. This release represents Google's continued push to compete in the rapidly evolving AI model landscape.</p>
-      
-      
-      <div class="keywords">
-        
-        <span class="kw">Google</span>
-        
-        <span class="kw">Gemini</span>
         
         <span class="kw">LLM</span>
         
-        <span class="kw">reasoning</span>
+        <span class="kw">hallucination</span>
         
-      </div>
-      
-    </div>
-    
-    <div class="card">
-      <div class="card-meta">
-        <span class="badge">Research</span>
-        <span class="source">HuggingFace</span>
-        <span class="score high">
-          8/10
-        </span>
-      </div>
-      <p class="card-title">
-        <a href="https://huggingface.co/blog/ibm-research/altk-evolve-consistency" target="_blank" rel="noopener">Your Agent Aced the Task. Will It Do It Again?</a>
-      </p>
-      
-      <p class="card-summary">The article examines the reliability and reproducibility of AI agents, questioning whether strong performance on a task is consistent or a one-time result. It highlights challenges in evaluating agent behavior, since agents can succeed in one attempt but fail when run again under similar conditions. This raises important concerns for teams deploying agents in production environments where consistent, repeatable performance is critical.</p>
-      
-      
-      <div class="keywords">
+        <span class="kw">AI safety</span>
         
-        <span class="kw">agents</span>
-        
-        <span class="kw">evaluation</span>
-        
-        <span class="kw">benchmarks</span>
-        
-        <span class="kw">reliability</span>
+        <span class="kw">military AI</span>
         
       </div>
       
@@ -523,6 +434,95 @@
         <span class="kw">orchestration</span>
         
         <span class="kw">Claude Code</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">The Verge</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.theverge.com/ai-artificial-intelligence/997633/openai-microsoft-chatgpt-ai-new-york-times-doom-loop-theft-google-zero" target="_blank" rel="noopener">OpenAI and Microsoft knew they were starting a ‘doom loop’ for the web</a>
+      </p>
+      
+      <p class="card-summary">Newly unsealed court documents from the New York Times' lawsuit against OpenAI and Microsoft reveal that both companies were internally aware of significant ethical and legal concerns surrounding their data practices. Internal documentation allegedly described their web scraping for AI training as the 'largest theft of labor in human history' and warned it would create a 'doom loop' harmful to the broader web ecosystem. These revelations suggest leadership had prior knowledge of the potential damage their data collection methods could cause.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">OpenAI</span>
+        
+        <span class="kw">Microsoft</span>
+        
+        <span class="kw">data scraping</span>
+        
+        <span class="kw">copyright</span>
+        
+        <span class="kw">litigation</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">Wired</span>
+        <span class="score high">
+          8/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.wired.com/story/if-the-ai-industry-followed-its-own-research-it-might-have-paused-already/" target="_blank" rel="noopener">If the AI Industry Followed Its Own Research, It Might Have Paused Already</a>
+      </p>
+      
+      <p class="card-summary">Anthropic's CEO has acknowledged that AI safety depends on understanding how AI models internally process and reason through problems, but current interpretability research reveals troubling findings about AI behavior that we don't yet fully understand. The article argues that if the AI industry took its own safety research seriously, the concerning results might warrant slowing down development. This raises questions about whether leading AI labs are applying their own findings consistently when making deployment decisions.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">AI safety</span>
+        
+        <span class="kw">Anthropic</span>
+        
+        <span class="kw">interpretability</span>
+        
+        <span class="kw">LLM</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <div class="card-meta">
+        <span class="badge">Policy</span>
+        <span class="source">Wired</span>
+        <span class="score mid">
+          7/10
+        </span>
+      </div>
+      <p class="card-title">
+        <a href="https://www.wired.com/story/washington-wont-be-regulating-ai-anytime-soon/" target="_blank" rel="noopener">Washington Won’t Be Regulating AI Anytime Soon</a>
+      </p>
+      
+      <p class="card-summary">Despite growing concerns about AI risks, the U.S. federal government shows little appetite for AI regulation, with the White House actively opposing oversight efforts. Legislative action remains unlikely in the near term, leaving AI development largely ungoverned at the federal level. This signals a hands-off regulatory environment that could shape how companies build and deploy AI systems going forward.</p>
+      
+      
+      <div class="keywords">
+        
+        <span class="kw">AI regulation</span>
+        
+        <span class="kw">policy</span>
+        
+        <span class="kw">government</span>
+        
+        <span class="kw">AI safety</span>
         
       </div>
       
